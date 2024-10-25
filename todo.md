@@ -1,20 +1,29 @@
 # Tech E-commerce Store - To-Do List
 
 ## 1. Finish the Hook that Retrieves Product Data
-- [ ] Create a custom hook for fetching product data.
-- [ ] **Part 1:** Establish a Redux state to hold `productData`.
-  - [ ] Create a new slice for `productData`.
-  - [ ] Add necessary actions and reducer functions to update `productData`.
-- [ ] **Part 2:** Define an interface for the `Product` type.
-  - [ ] Ensure all required properties like `name`, `price`, `description`, `mainImage`, etc., are included.
-- [ ] **Part 3:** Update the Redux store interface.
-  - [ ] Add `productData` to the global Redux store interface to ensure type safety.
+- [x] Create a custom hook for fetching product data.
+- [x] **Part 1:** Establish a Redux state to hold `productData`.
+  - [x] Create a new slice for `productData`.
+  - [x] Add necessary actions and reducer functions to update `productData`.
+- [x] **Part 2:** Define an interface for the `Product` type.
+  - [x] Ensure all required properties like `name`, `price`, `description`, `mainImage`, etc., are included.
+- [x] **Part 3:** Update the Redux store interface.
+  - [x] Add `productData` to the global Redux store interface to ensure type safety.
 
 ## 2. Create the Product Page and Map Out the Retrieved Product Data
-- [ ] Build the Product Page component.
-  - [ ] Use the hook to fetch `productData` from Redux state.
-- [ ] Map out the `productData` to display individual products.
-  - [ ] Ensure each product includes relevant information such as name, image, and price.
+- [x] Build the Product Page component.
+  - [x] Use the hook to fetch `productData` from Redux state.
+- [x] Map out the `productData` to display individual products.
+  - [x] Ensure each product includes relevant information such as name, image, and price.
   - [ ] Add navigation or links to each product’s exclusive detail page.
 
+## 3. Add Wishlist and Cart Addition Feature
+- [ ] Create the wishlist and cart options for each product.
+  - [ ] Use the user Redux state to conditionally render the wishlist and cart options.
+- [ ] Ensure adding to wishlist and cart updates the user's state in the Redux store.
 
+## 4. Start Exploring Route Parameters
+- [ ] Implement route parameters for:
+  - [ ] Cart page.
+  - [ ] Product details page.
+  - [ ] Wishlist page.
