@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { userDataInterface } from "../interfaces/userDataInterface";
+import { userDataInterface } from "../interfaces/formDataInterface";
 import { useNavigate } from "react-router-dom";
 
 export const useRegister = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const navigate =  useNavigate();
+  const navigate = useNavigate();
 
   const registerUser = async (userData: userDataInterface, url: string) => {
     setLoading(true);
@@ -23,9 +23,9 @@ export const useRegister = () => {
 
       if (response.ok) {
         console.log("User account created successfully");
-        localStorage.setItem("token",result.token);
-        localStorage.setItem("userData",JSON.stringify(result.user));
-        navigate('/');
+        localStorage.setItem("token", result.token);
+        localStorage.setItem("userData", JSON.stringify(result.user));
+        navigate("/");
       } else {
         setError(result.message || "Failed to create the account");
         console.error("User account could not be created:", result.message);

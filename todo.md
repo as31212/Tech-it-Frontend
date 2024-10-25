@@ -1,36 +1,20 @@
-## Next Steps: Login and Registration
-### 1. **Learn how to use hooks**
-- ask gpt how they are similar to modules
-- create a drive document on how to use them
-- learn how to manage loading state potentially use finally block
-- when creating your registration learn how to retrieve the response and route to home page if the response is positive
+# Tech E-commerce Store - To-Do List
 
-### 2. **Create User Registration**
-- Set up a registration form with the following fields:
-  - Username
-  - Email
-  - Password
-- Ensure input validation for each field (e.g., valid email format, password strength).
-- On successful registration, store user information in the database.
-- Hash passwords before storing them for security.
+## 1. Finish the Hook that Retrieves Product Data
+- [ ] Create a custom hook for fetching product data.
+- [ ] **Part 1:** Establish a Redux state to hold `productData`.
+  - [ ] Create a new slice for `productData`.
+  - [ ] Add necessary actions and reducer functions to update `productData`.
+- [ ] **Part 2:** Define an interface for the `Product` type.
+  - [ ] Ensure all required properties like `name`, `price`, `description`, `mainImage`, etc., are included.
+- [ ] **Part 3:** Update the Redux store interface.
+  - [ ] Add `productData` to the global Redux store interface to ensure type safety.
 
-### 3. **Create User Login**
-- Set up a login form with the following fields:
-  - Email
-  - Password
-- Authenticate the user using the stored credentials (e.g., comparing the hashed password).
-- On successful login, generate and store a JWT token.
+## 2. Create the Product Page and Map Out the Retrieved Product Data
+- [ ] Build the Product Page component.
+  - [ ] Use the hook to fetch `productData` from Redux state.
+- [ ] Map out the `productData` to display individual products.
+  - [ ] Ensure each product includes relevant information such as name, image, and price.
+  - [ ] Add navigation or links to each product’s exclusive detail page.
 
-### 4. **Conditional Rendering Based on Login Status**
-- Track login status using a global state (e.g., React Context or Redux) or by checking if a valid JWT is present.
-- Conditionally render the following based on whether the user is logged in:
-  - **Logged In**:
-    - Show a "Logout" button.
-    - Display user-specific content (e.g., wishlist, cart).
-  - **Logged Out**:
-    - Show "Login" and "Register" buttons.
-    - Redirect to the login page for certain protected routes (e.g., profile, checkout).
 
-### 5. **Secure Routes**
-- Ensure that some routes are protected and can only be accessed by logged-in users.
-- Redirect users to the login page if they attempt to access a protected route while logged out.

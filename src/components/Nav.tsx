@@ -1,12 +1,16 @@
 import { PiShoppingCartThin } from "react-icons/pi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 
 export const Nav: React.FC = () => {
-  const {logout} = useLogout();
+  const { logoutFunc } = useLogout();
+  const location = useLocation();
+  const userData = useSelector((state: reduxStoreInterface) => state.userData);
+
   return (
-    <nav className="flex justify-between items-center p-4">
+    <nav className={`flex justify-between items-center p-4`}>
       <Link to="/">
         <img
           className="h-12 w-auto"
@@ -15,9 +19,29 @@ export const Nav: React.FC = () => {
         />
       </Link>
       <ul className="flex space-x-32">
-        <li><Link to="/About">ABOUT US</Link></li>
-        <li><Link to="/Products">PRODUCTS</Link></li>
-        {localStorage.getItem("userData") ? <li className="hover:text-blue-400 hover:cursor-pointer" onClick={()=>logout()}>LOGOUT</li> : <li><Link to="/Login">LOGIN</Link></li>}
+        <li>
+          <Link to="/About">ABOUT US</Link>
+        </li>
+        <li>
+          <Link to="/Products">PRODUCTS</Link>
+        </li>
+        {userData.auth ? (
+          <li
+            className="hover:text-blue-400 hover:cursor-pointer"
+            onClick={() => logoutFunc()}
+          >
+            LOGOUT
+          </li>
+        ) : (
+          <li>
+            <Link to="/Login">LOGIN</Link>
+          </li>
+        )}
+        {userData.role === "admin"?(
+          <>
+          <li>ADMIN</li>
+          </>
+        ):""}
       </ul>
       <Link to="/Cart">
         <PiShoppingCartThin className="text-blue-400 text-2xl" />

@@ -1,5 +1,9 @@
 
 export interface userDataInterface{
+    auth: boolean,
+    id: string,
     email: string,
-    password: string
+    role: string,
+    wishlist: string[],
+    cart:string[],
 }
