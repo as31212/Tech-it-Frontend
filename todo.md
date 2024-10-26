@@ -18,7 +18,7 @@
   - [x] Add navigation or links to each product’s exclusive detail page.
 
 ## 3. Add Wishlist and Cart Addition Feature
-- [ ] Create the wishlist and cart options for each product.
+- [x] Create the wishlist and cart options for each product.
   - [ ] Use the user Redux state to conditionally render the wishlist and cart options.
 - [ ] Ensure adding to wishlist and cart updates the user's state in the Redux store.
 
@@ -29,5 +29,5 @@
   - [ ] Wishlist page.
 
 ## 5. Create a Profile Navigation Link
-- [ ] Create a profile nav link that turns into a dropdown when hovered.
-  - [ ] Dropdown should display options like logout and settings.
+- [x] Create a profile nav link that turns into a dropdown when hovered.
+  - [x] Dropdown should display options like logout and settings.

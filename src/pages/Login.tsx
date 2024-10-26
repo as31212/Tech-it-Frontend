@@ -26,7 +26,7 @@ export const Login: React.FC = () => {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col items-center justify-center">
+      <div className="h-screen flex flex-col items-center justify-center">
         <div
           className="border-[1px] p-5 w-[500px] min-w-fit flex flex-col shadow-2xl rounded-md"
           id="login-box"
@@ -55,7 +55,7 @@ export const Login: React.FC = () => {
             >{`${loading ? "Loading..." : "Log in"}`}</button>
             <p className="text-red-400 text-center">{error ? error : ""}</p>
             <p className="text-center">
-              don't have an account? go{" "}
+              don't have an account? Sign Up{" "}
               <Link
                 className="text-blue-400 underline hover:text-blue-800"
                 to="/Register"

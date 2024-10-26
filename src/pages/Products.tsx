@@ -24,7 +24,10 @@ export const Products: React.FC = () => {
       {!isProductDetail && (
         <>
           <h2 className="text-center font-bold text-2xl my-5">Products</h2>
-          <div className="flex flex-wrap justify-center gap-5">
+          <div id="filter-&-sort-container">
+            
+          </div>
+          <div id="products-container" className="flex flex-wrap justify-center gap-5">
             {loading && <Loading />}
             {error && <p className="text-red-600">{error}</p>}
             {productData.map((el: productDataInterface) => (
