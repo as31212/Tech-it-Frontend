@@ -1,21 +1,20 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { populate } from "../redux/slices/productDataSlice";
+import {reset, populate } from "../redux/slices/productSlice";
 
-export const useFetchProducts = () => {
+const useFetchOneProduct = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const dispatch = useDispatch();
 
-  const fetchData = async (url: string) => {
+  const fetchProduct = async (url: string) => {
     try {
       setLoading(true);
-
       const request = await fetch(url);
       const result = await request.json();
-
       if (request.ok) {
-        console.log("data fetched");
+        console.log("Product fetched");
+        dispatch(reset());
         dispatch(populate(result));
         setError(null);
       } else {
@@ -26,10 +25,10 @@ export const useFetchProducts = () => {
       setError("An unexpected error occurred");
       console.error(error);
     } finally {
-      setLoading(false);
-      console.log(loading);
+        setLoading(false);
     }
   };
 
-  return {loading,error,fetchData};
+  return {loading,error,fetchProduct};
 };
+export default useFetchOneProduct;

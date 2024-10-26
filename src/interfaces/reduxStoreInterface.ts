@@ -5,4 +5,5 @@ export interface reduxStoreInterface{
     "userData":userDataInterface,
     "token":string,
     "productData": productDataInterface[],
+    "product":productDataInterface,
 }

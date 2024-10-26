@@ -9,9 +9,16 @@ import { About } from "./pages/About";
 import { ProductDetails } from "./pages/ProductDetails";
 import { Wishlist } from "./pages/Wishlist";
 import { Loading } from "./pages/Loading";
+import { useEffect } from "react";
+import useRetrieveUser from "./hooks/useRetrieveUser";
 
 function App() {
-  
+
+  const {retrieveUser} = useRetrieveUser();
+  useEffect(()=>{ //retrieves user data from local storage
+    retrieveUser();
+  },[]);
+
 
   return (
     <>
@@ -21,12 +28,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Loading" element={<Loading />} />
           <Route path="/Wishlist/:id" element={<Wishlist />} />
-          <Route path="/Products/:id" element={<ProductDetails />} />
+
           <Route path="/About" element={<About />} />
-          <Route path="/Products" element={<Products />} />
+          <Route path="/Products" element={<Products />}>
+            <Route path=":id" element={<ProductDetails />} />
+          </Route>
           <Route path="/Login" element={<Login />} />
           <Route path="/Cart/:id" element={<Cart />} />
-          <Route path="/Register" element={<Register />}/>
+          <Route path="/Register" element={<Register />} />
         </Routes>
       </Router>
     </>

@@ -1,29 +1,30 @@
 import { productCardInterface } from "../interfaces/productCardInterace";
-
+import { Link } from "react-router-dom";
 
 const ProductCard: React.FC<productCardInterface> = ({
+  _id,
   name,
   price,
   description,
   categories,
   mainImage,
 }) => {
+
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 m-4 w-80">
-      {/* Image Section */}
+    <Link to={_id} className="bg-white shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 m-4 w-80">
+
       <img
         src={mainImage}
         alt={name}
         className="w-full h-48 object-cover"
       />
 
-      {/* Details Section */}
+ 
       <div className="p-4">
         <h2 className="text-xl font-semibold mb-2">{name}</h2>
         <p className="text-lg font-bold text-green-600 mb-2">${price.toFixed(2)}</p>
         <p className="text-gray-700 mb-4">{description}</p>
 
-        {/* Displaying categories */}
         <div className="flex flex-wrap gap-2">
           {categories.map((category, index) => (
             <span
@@ -35,7 +36,7 @@ const ProductCard: React.FC<productCardInterface> = ({
           ))}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

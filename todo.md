@@ -15,7 +15,7 @@
   - [x] Use the hook to fetch `productData` from Redux state.
 - [x] Map out the `productData` to display individual products.
   - [x] Ensure each product includes relevant information such as name, image, and price.
-  - [ ] Add navigation or links to each product’s exclusive detail page.
+  - [x] Add navigation or links to each product’s exclusive detail page.
 
 ## 3. Add Wishlist and Cart Addition Feature
 - [ ] Create the wishlist and cart options for each product.
@@ -24,6 +24,10 @@
 
 ## 4. Start Exploring Route Parameters
 - [ ] Implement route parameters for:
-  - [ ] Cart page.
-  - [ ] Product details page.
+  - [] Cart page.
+  - [x] Product details page.
   - [ ] Wishlist page.
+
+## 5. Create a Profile Navigation Link
+- [ ] Create a profile nav link that turns into a dropdown when hovered.
+  - [ ] Dropdown should display options like logout and settings.

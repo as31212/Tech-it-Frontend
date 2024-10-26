@@ -1,20 +1,21 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
+import { userDataInterface } from "../interfaces/userDataInterface";
 
 export const Home: React.FC = () => {
   const token = localStorage.getItem("token") || null;
-  const userData = useSelector((state) => state.userData);
+  const userData:userDataInterface = useSelector((state:reduxStoreInterface) => state.userData);
 
   return (
     <>
-      <div className="min-h-screen"></div>
 
       {/* test code for login, delete once home page is complete */}
       <h2 className="font-bold text-center">Home</h2>
       {token && userData ? (
         <div>
           <p className="font-bold">
-            Welcome, <span className="font-normal">{userData.name}</span>
+            Welcome
           </p>
           <p className="font-bold">
             Email: <span className="font-normal">{userData.email}</span>
