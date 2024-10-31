@@ -5,7 +5,7 @@ import { cartInterface } from "./cartInterface";
 export interface reduxStoreInterface{
     "userData":userDataInterface,
     "token":string,
-    "productData": productDataInterface[],
+    "productData": productDataInterface[] | string[],
     "product":productDataInterface,
-    "cart": cartInterface;
+    "cart": cartInterface[];
 }

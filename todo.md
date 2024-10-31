@@ -20,14 +20,22 @@
 ## 3. Add Wishlist and Cart Addition Feature
 - [x] Create the wishlist and cart options for each product.
   - [ ] Use the user Redux state to conditionally render the wishlist and cart options.
-- [ ] Ensure adding to wishlist and cart updates the user's state in the Redux store.
+- [ ] Ensure adding to wishlist and cart updates the user's state in the Redux store. 
 
 ## 4. Start Exploring Route Parameters
-- [ ] Implement route parameters for:
-  - [] Cart page.
   - [x] Product details page.
-  - [ ] Wishlist page.
 
 ## 5. Create a Profile Navigation Link
 - [x] Create a profile nav link that turns into a dropdown when hovered.
   - [x] Dropdown should display options like logout and settings.
+
+## 6. Create a pagination system in the frontend
+
+## 7. Create a filtering system in the products page
+-[] filter based on category
+-[] filter based on price
+-[] filter based on potential brands if you end up changing the mock datas company names
+
+## 8. Create a cart sidebar that appears when a user adds an item to their cart
+-[] it should have an option to continue shopping or go to cart
+-[] 
