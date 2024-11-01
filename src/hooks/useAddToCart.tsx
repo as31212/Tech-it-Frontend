@@ -42,14 +42,14 @@ const useAddToCart = () => {
     }
   };
 
-  const addToLocalCart = (_id: string) => {
+  const addToLocalCart = (_id: string , quantity:number) => { //todo alter this function
     const existingLocalCart = localStorage.getItem("cart");
     if (existingLocalCart) {
       // Parse the existing cart array from local storage
       const cartArray = JSON.parse(existingLocalCart);
 
       // Push the new item (_id) into the parsed array
-      cartArray.push(_id);
+      cartArray.push(_id); //! this is wrong. The cart is not an array of strings but an array of objects with the properties of productId:string | product document and quantity:number fix later
 
       // Store the updated array back into local storage as a string
       localStorage.setItem("cart", JSON.stringify(cartArray));
@@ -64,6 +64,4 @@ const useAddToCart = () => {
 };
 
 export default useAddToCart
-// todo here is what needs to be done 1.you need to create the endpoint to handle fetching local cart data !number 1 DONE! 2.you need to add a merge local cart function to handle login and registration seamlessly 3.I have decided to remove the quantity increment feature if item is the same, this should greatly simplify local and user cart merges on registrations and login
-
-//todo in order to do this you need to change the controller and remove the conditional check for duplicates.
+// todo here is what needs to be done 1.you need to create the endpoint to handle fetching local cart data !number 1 DONE! 2.you need to add a merge local cart function to handle login and registration seamlessly 

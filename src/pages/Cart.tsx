@@ -3,11 +3,13 @@ import useFetchUserCart from "../hooks/useFetchUserCart";
 import CartCard from "../components/CartCard";
 import { useSelector } from "react-redux";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
+import { useLocation } from "react-router-dom";
 
 export const Cart: React.FC = () => {
   const { loading, error, fetchUserCart } = useFetchUserCart();
   const cart = useSelector((state: reduxStoreInterface) => state.cart);
   const userData = useSelector((state: reduxStoreInterface) => state.userData);
+  const location = useLocation(); // whenever the route changes this varible changes
 
   useEffect(() => {
     if (userData.auth) {
@@ -15,7 +17,7 @@ export const Cart: React.FC = () => {
       console.log("fetch Cart");
       
     }
-  }, [userData.auth]);
+  }, [userData,location]); //if you add this as a dependency then the data will be fetched every time the route changes 
 
   return (
     <>
