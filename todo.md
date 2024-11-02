@@ -34,8 +34,11 @@
 ## 7. Create a filtering system in the products page
 -[] filter based on category
 -[] filter based on price
--[] filter based on potential brands if you end up changing the mock datas company names
+-[] filter based on potential brands if you end up changing the mock data company names
 
-## 8. Create a cart sidebar that appears when a user adds an item to their cart
+## 8. Create a cart sidebar/modal that appears when a user adds an item to their cart
 -[] it should have an option to continue shopping or go to cart
--[] 
+-[] make sure that you must interact with the modal to continue any functions
+-[] gray the rest of the screen
+
+## 9. Make newly created order summary into  component rather than a part of the cart page
