@@ -27,9 +27,9 @@ const CartCard: React.FC<cartCardInterface> = ({
   };
 
   return (
-    <div className="flex items-center justify-between border rounded-md p-4 shadow-md w-full max-w-lg">
+    <div className="flex items-center justify-between border rounded-md p-4 shadow-md w-full">
       <img
-        className="w-16 h-16 object-cover rounded-md"
+        className="h-44 object-cover rounded-md"
         src={mainImage}
         alt={`${name} image`}
       />
@@ -40,14 +40,14 @@ const CartCard: React.FC<cartCardInterface> = ({
         >
           {name}
         </Link>
-        <p className="text-sm text-gray-600">${price}</p>
+        <p className="text-sm text-green-400 font-bold">${price}</p>
       </div>
       <div className="flex items-center space-x-2">
         <select
           name="quantity"
           value={localQuantity}
           onChange={handleQuantityChange}
-          className="border rounded-md px-2 py-1 text-sm"
+          className="border rounded-md px-4 py-2 text-md focus:outline"
         >
           {Array.from({ length: 5 }, (_, i) => i + 1).map((value) => (
             <option key={value} value={value}>
