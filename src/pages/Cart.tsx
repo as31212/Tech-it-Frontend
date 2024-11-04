@@ -17,7 +17,7 @@ export const Cart: React.FC = () => {
       fetchUserCart();
       console.log("cart fetched",cart);
     }
-  }, [userData, location]);
+  }, [userData, location, ]);
 
   return (
     <div className="flex flex-col lg:flex-row gap-8 p-4">

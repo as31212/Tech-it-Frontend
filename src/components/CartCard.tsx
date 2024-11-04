@@ -1,9 +1,10 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { cartCardInterface } from "../interfaces/cartCardInterface";
 import { Link } from "react-router-dom";
 import useChangeQuantity from "../hooks/useChangeQuantity";
 import { useSelector } from "react-redux";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
+import useFetchUserCart from "../hooks/useFetchUserCart";
 
 const CartCard: React.FC<cartCardInterface> = ({
   name,
@@ -26,8 +27,9 @@ const CartCard: React.FC<cartCardInterface> = ({
     );
   };
 
+
   return (
-    <div className="flex items-center justify-between border rounded-md p-4 shadow-md w-full">
+    <div className="flex items-center justify-between border p-4 shadow-md w-full">
       <img
         className="h-44 object-cover rounded-md"
         src={mainImage}

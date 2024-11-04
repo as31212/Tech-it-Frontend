@@ -41,4 +41,4 @@
 -[] make sure that you must interact with the modal to continue any functions
 -[] gray the rest of the screen
 
-## 9. Make newly created order summary into  component rather than a part of the cart page
+## 9. finish the delete cart item hook and then add the logic to cart card component, remember this requires a delete request 

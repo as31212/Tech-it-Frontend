@@ -1,11 +1,20 @@
 import useCheckout from "../hooks/useCheckout";
+import { useSelector } from "react-redux";
+import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
+import { useEffect } from "react";
+
 
 const OrderSummary: React.FC = () => {
-  const { salesTax, findOriginalPrice, findTotalPrice } = useCheckout();
+  const cart = useSelector((state:reduxStoreInterface)=>state.cart);
+  const priceData = useSelector((state:reduxStoreInterface)=>state.priceData);
+  const {changePriceData} = useCheckout();
+  useEffect(()=>{
+    changePriceData();
+  },[cart]); 
   return (
     <>
       {/* Order Summary Section  */}
-      <div className="flex flex-col w-1/3 border rounded-lg p-6 shadow-md sticky top-24 h-fit">
+      <div className="flex flex-col w-1/3 border p-6 shadow-md sticky top-24 h-fit">
         <h2 className="text-xl font-semibold mb-4 text-center">
           Order Summary
         </h2>
@@ -13,7 +22,7 @@ const OrderSummary: React.FC = () => {
         <div className="space-y-2">
           <p className="flex justify-between">
             <span>Original Price</span>
-            <span>${findOriginalPrice().toFixed(2)}</span>
+            <span>${priceData.originalPrice}</span>
           </p>
           <p className="flex justify-between">
             <span>Savings</span>
@@ -29,13 +38,13 @@ const OrderSummary: React.FC = () => {
           </p>
           <p className="flex justify-between">
             <span>Estimated Sales Tax</span>
-            <span>${salesTax}</span>
+            <span>${priceData.salesTax}</span>
           </p>
         </div>
         <hr className="my-4" />
         <div className="flex justify-between text-lg font-bold">
           <span>Total</span>
-          <span>${findTotalPrice()}</span>
+          <span>${priceData.totalPrice}</span>
         </div>
         <button className="mt-6 w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">
           Checkout

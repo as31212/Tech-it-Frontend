@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { useSelector } from "react-redux";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
+import { useNavigate } from "react-router-dom";
 
 const useChangeQuantity = () =>{
     const token = useSelector((state:reduxStoreInterface)=>state.token);
     const [error,setError] = useState<string | null>(null);
     const [loading,setLoading] = useState<boolean>(false);
+    const navigate = useNavigate();
 
     const changeQuantity =async (url:string,productId:string,quantity:number)=>{
         try {
@@ -26,6 +28,7 @@ const useChangeQuantity = () =>{
             if(request.ok){
                 setError(null);
                 console.log(result.message);
+                navigate('/Cart') //! test for cart re fetch
             }
             else{
                 setError(result.message);
