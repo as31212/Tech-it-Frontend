@@ -5,6 +5,8 @@ import useChangeQuantity from "../hooks/useChangeQuantity";
 import { useSelector } from "react-redux";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 import useFetchUserCart from "../hooks/useFetchUserCart";
+import useRemoveCartItem from "../hooks/useRemoveCartItem";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 const CartCard: React.FC<cartCardInterface> = ({
   name,
@@ -15,7 +17,8 @@ const CartCard: React.FC<cartCardInterface> = ({
 }) => {
   const [localQuantity, setLocalQuantity] = useState<number>(quantity);
   const userData = useSelector((state: reduxStoreInterface) => state.userData);
-  const { changeQuantity, error, loading } = useChangeQuantity();
+  const { changeQuantity, error, loading } = useChangeQuantity(); //todo figure out how you want to display quantity change loads
+  const {removeItem} = useRemoveCartItem();
 
   // Function to handle quantity change
   const handleQuantityChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -26,6 +29,8 @@ const CartCard: React.FC<cartCardInterface> = ({
       Number(e.target.value)
     );
   };
+
+
 
 
   return (
@@ -57,6 +62,7 @@ const CartCard: React.FC<cartCardInterface> = ({
             </option>
           ))}
         </select>
+        <FaRegTrashAlt className="text-red-500 text-xl hover:opacity-80" onClick={()=>{removeItem(productId)}} />
         {error && <p className="text-red-500 text-xs">{error}</p>}
       </div>
     </div>
