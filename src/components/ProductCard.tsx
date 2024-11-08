@@ -49,7 +49,7 @@ const ProductCard: React.FC<productCardInterface> = ({
         </div>
       </div>
       <div className="p-2">
-        <button onClick={userData.auth ? ()=>{addToUserCart(`http://localhost:4005/cart/add/${userData.id}`,token,_id,1)} : ()=>{addToLocalCart(_id)}} className={`p-2 border-2 border-blue-500 rounded-md w-full font-bold my-2 mx-auto hover:text-white hover:bg-blue-500 ease-in-out duration-300 ${loading ? "opacity-50" : ""}`}>
+        <button onClick={userData.auth ? ()=>{addToUserCart(`http://localhost:4005/cart/add/${userData.id}`,token,_id,1)} : ()=>{addToLocalCart(_id,1)}} className={`p-2 border-2 border-blue-500 rounded-md w-full font-bold my-2 mx-auto hover:text-white hover:bg-blue-500 ease-in-out duration-300 ${loading ? "opacity-50" : ""}`}>
           {loading ? (<SmallLoading/>) : ""}Add To Cart
         </button>
         {error && (<><p className="text-red-500">{error}</p></>)}

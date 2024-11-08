@@ -49,7 +49,7 @@ const useAddToCart = () => {
       const cartArray = JSON.parse(existingLocalCart);
 
       // Push the new item (_id) into the parsed array
-      cartArray.push(_id); //! this is wrong. The cart is not an array of strings but an array of objects with the properties of productId:string | product document and quantity:number fix later
+      cartArray.push(_id); //! this is wrong. The cart is not an array of strings but an array of objects with the properties of productId:string | product document and quantity:number fix later 
 
       // Store the updated array back into local storage as a string
       localStorage.setItem("cart", JSON.stringify(cartArray));

@@ -1,10 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { productDataInterface } from "../../interfaces/productDataInterface";
+
+const initialState: productDataInterface[] = [];
 
 const productDataSlice = createSlice({
     name: "productData",
-    initialState: [],
+    initialState,
     reducers: {
-        populate: (state, action) => {
+        populate: (state, action: PayloadAction<productDataInterface[]>) => {
             return action.payload; // Replace the current state entirely with the payload
         }
     }

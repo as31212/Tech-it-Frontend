@@ -1,9 +1,12 @@
 export interface productDataInterface {
-    _id:string
-    name:string
-    price: number
-    description:string
-    categories: string[]
-    mainImage: string
-    images: string[],
-} 
+    categories: string[];
+    createdAt?: string;  // Make optional if not always needed
+    description: string;
+    images?: string[];  // Make optional if not always needed
+    mainImage: string;
+    name: string;
+    price: number;
+    updatedAt?: string;  // Make optional if not always needed
+    __v?: number;  // Make optional if not always needed
+    _id: string;
+  }

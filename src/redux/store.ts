@@ -6,6 +6,7 @@ import productReducer from "./slices/productSlice";
 import cartDataReducer from "./slices/cartDataSlice";
 import priceDataReducer from "./slices/priceDataSlice";
 
+
 const reduxStore = configureStore({
     reducer:{
         "userData":userDataReducer, //user info
