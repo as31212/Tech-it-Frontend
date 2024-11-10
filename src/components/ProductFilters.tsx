@@ -23,6 +23,9 @@ const ProductFilters: React.FC = () => {
           ))}
         </div>
       )}
+      <div id="price-filter">
+        
+      </div>
     </div>
   );
 };

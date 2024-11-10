@@ -13,7 +13,7 @@ export const Nav: React.FC = () => {
 
   return (
     <nav
-      className={`flex justify-between items-center p-4 sticky top-0 z-10 bg-blue-500 text-white font-bold shadow-md`}
+      className={`flex justify-between items-center p-4 sticky top-0 z-10 bg-white  text-gray-500 font-bold shadow-md`}
     >
       <Link to="/">
         <img
