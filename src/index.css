@@ -2,3 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 @import 'swiper/swiper-bundle.min.css'; 
+
+/* Swiper Carousel Styles */
+
+.swiper-pagination-bullet{
+    max-width: 100px ;
+    width: 100%;
+    border-radius: 0%;
+    
+}
+
+.swiper-pagination-bullet-active{
+    height: .8rem;
+    transition: .1s ease-in-out;
+}
+
+.swiper-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}

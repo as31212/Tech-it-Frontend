@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import useFetchCategories from "../hooks/useFetchCategories";
+import PriceFilter from "./PriceFilter";
 
 const ProductFilters: React.FC = () => {
   const { error, loading, categories, fetchCategories } = useFetchCategories();
@@ -24,7 +25,7 @@ const ProductFilters: React.FC = () => {
         </div>
       )}
       <div id="price-filter">
-        
+        <PriceFilter />
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ const Carousel: React.FC = () => {
         slidesPerView={1}
         pagination={{ clickable: true }}
         loop={true}
-        // autoplay={{delay: 9000 , disableOnInteraction:false}} 
+        autoplay={{delay: 10000 , disableOnInteraction:false}} 
         className="w-full h-[90vh]"
       >
         <SwiperSlide className="">
@@ -28,9 +28,6 @@ const Carousel: React.FC = () => {
         </SwiperSlide>
         <SwiperSlide>
           <CarouselSlide2 title="Fast & Free Delivery" image="Image-3.png" link="/About#delivery" buttonTitle="Learn More" description="Tech-IT’s delivery system ensures fast, reliable, and secure shipping. With advanced tracking and trusted partners, we keep customers updated from warehouse to doorstep. Offering standard, expedited, and same-day delivery in select areas, Tech-IT prioritizes efficiency and customer satisfaction, so every order arrives swiftly and safely." />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="w-full h-screen" src="https://via.placeholder.com/600x400" alt="Slide 4" />
         </SwiperSlide>
       </Swiper>
     </>

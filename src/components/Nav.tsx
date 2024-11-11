@@ -72,7 +72,7 @@ export const Nav: React.FC = () => {
         )}
       </ul>
       <Link to="/Cart">
-        <PiShoppingCartThin className=" text-2xl" />
+        <PiShoppingCartThin className=" text-2xl text-blue-500" />
       </Link>
     </nav>
   );

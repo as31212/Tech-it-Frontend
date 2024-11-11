@@ -22,32 +22,34 @@ export const Products: React.FC = () => {
 
   return (
     <>
-      {!isProductDetail && (
-        <>
-          <h2 className="text-center font-bold text-2xl my-5">Products</h2>
-          <div className="flex">
-            <div id="filter-&-sort-container">
-            <ProductFilters/>
+      <div className="p-5">
+        {!isProductDetail && (
+          <>
+            <h2 className="text-center font-bold text-2xl my-5">Products</h2>
+            <div className="flex">
+              <div id="filter-&-sort-container">
+              <ProductFilters/>
+              </div>
+              <div id="products-container" className="flex flex-wrap justify-center gap-5">
+                {loading && <Loading />}
+                {error && <p className="text-red-600">{error}</p>}
+                {productData.map((el: productDataInterface) => (
+                  <ProductCard
+                    key={el._id} // Key should be unique, using _id instead of name
+                    _id={el._id}
+                    name={el.name}
+                    description={el.description}
+                    price={el.price}
+                    mainImage={el.mainImage}
+                    categories={el.categories}
+                  />
+                ))}
+              </div>
             </div>
-            <div id="products-container" className="flex flex-wrap justify-center gap-5">
-              {loading && <Loading />}
-              {error && <p className="text-red-600">{error}</p>}
-              {productData.map((el: productDataInterface) => (
-                <ProductCard
-                  key={el._id} // Key should be unique, using _id instead of name
-                  _id={el._id}
-                  name={el.name}
-                  description={el.description}
-                  price={el.price}
-                  mainImage={el.mainImage}
-                  categories={el.categories}
-                />
-              ))}
-            </div>
-          </div>
-        </>
-      )}
-      <Outlet />
+          </>
+        )}
+        <Outlet />
+      </div>
     </>
   );
 };
