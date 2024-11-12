@@ -6,20 +6,29 @@
 /* Swiper Carousel Styles */
 
 .swiper-pagination-bullet{
-    max-width: 100px ;
-    width: 100%;
+    width: 100px;
     border-radius: 0%;
-    
 }
 
 .swiper-pagination-bullet-active{
-    height: .8rem;
+    width: 120px ;
     transition: .1s ease-in-out;
 }
 
-.swiper-pagination{
+.swiper-pagination {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    padding: .95rem;
 }
+
+.swiper-pagination:hover .swiper-pagination-bullet {
+    height: .7rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.swiper-pagination:hover{
+    cursor: pointer;
+}
+

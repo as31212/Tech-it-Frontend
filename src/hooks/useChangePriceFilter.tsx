@@ -12,4 +12,4 @@ const useChangePriceFilter = () =>{
 
     }
 }
-//todo i have decided to create a seperate state from the products state called filtered products, i am unsure if i want to make this state global or local.
+//todo i have decided to create a separate state from the products state called filtered products, i am unsure if i want to make this state global or local.

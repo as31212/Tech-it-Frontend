@@ -13,11 +13,11 @@ const Carousel: React.FC = () => {
     <>
       <Swiper
         modules={[Autoplay,Pagination]} // Remove Navigation module
-        spaceBetween={30}
+        spaceBetween={1000}
         slidesPerView={1}
         pagination={{ clickable: true }}
         loop={true}
-        autoplay={{delay: 10000 , disableOnInteraction:false}} 
+        // autoplay={{delay: 10000 , disableOnInteraction:false}} 
         className="w-full h-[90vh]"
       >
         <SwiperSlide className="">
