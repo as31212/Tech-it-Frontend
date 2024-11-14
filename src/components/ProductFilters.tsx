@@ -1,32 +1,15 @@
-import { useEffect } from "react";
-import useFetchCategories from "../hooks/useFetchCategories";
+import CategoryFilter from "./CategoryFilter";
 import PriceFilter from "./PriceFilter";
 
 const ProductFilters: React.FC = () => {
-  const { error, loading, categories, fetchCategories } = useFetchCategories();
-
-  useEffect(() => {
-    fetchCategories();
-  }, []);
-
   return (
-    <div className="flex flex-col" id="product-filters">
-      {loading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>Error loading categories</p>
-      ) : (
-        <div id="category-filter">
-          {categories.map((el) => (
-            <p key={el._id} className="font-bold">
-              {el.name}
-            </p>
-          ))}
-        </div>
-      )}
-      <div id="price-filter">
-        <PriceFilter />
-      </div>
+    <div
+      className="flex flex-col gap-5 p-6 bg-white rounded-lg shadow-lg sticky top-24 h-fit"
+      id="product-filters"
+    >
+      <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">Filters</h2>
+      <CategoryFilter />
+      <PriceFilter />
     </div>
   );
 };

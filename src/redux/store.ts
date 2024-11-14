@@ -6,6 +6,8 @@ import productReducer from "./slices/productSlice";
 import cartDataReducer from "./slices/cartDataSlice";
 import priceDataReducer from "./slices/priceDataSlice";
 import priceFilterReducer from "./slices/priceFilterSlice"
+import productFilterReducer from "./slices/productFilterSlice";
+import productQueryReducer from "./slices/productQuerySlice"
 
 
 const reduxStore = configureStore({
@@ -16,7 +18,11 @@ const reduxStore = configureStore({
         "product": productReducer, //for product details page
         "cart": cartDataReducer, //for cart page and potential side bar
         "priceData": priceDataReducer, //for order summary price info
-        "priceFilter": priceFilterReducer
+        "priceFilter": priceFilterReducer,
+        "productFilter": productFilterReducer,
+        "productQuery": productQueryReducer,
+        
+
     }
 });
 

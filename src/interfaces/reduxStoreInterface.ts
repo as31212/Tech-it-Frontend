@@ -11,4 +11,6 @@ export interface reduxStoreInterface{
     "cart": cartInterface[];
     "priceData": priceDataInterface;
     "priceFilter": number;
+    "productFilter": string[];
+    "productQuery": string;
 }

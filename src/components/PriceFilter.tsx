@@ -4,6 +4,7 @@ import { changeFilterNumber } from "../redux/slices/priceFilterSlice";
 
 const PriceFilter: React.FC = () => {
     const priceRanges = [
+        { string: "All", filter: 1000000 },
         { string: "Under $20", filter: 20 },
         { string: "Under $50", filter: 50 },
         { string: "Under $100", filter: 100 },
@@ -12,7 +13,6 @@ const PriceFilter: React.FC = () => {
         { string: "Under $1000", filter: 1000 },
         { string: "Under $2000", filter: 2000 },
         { string: "Under $3000", filter: 3000 },
-        { string: "All", filter: 1000000 }
     ];
 
     const dispatch = useDispatch();
@@ -21,19 +21,23 @@ const PriceFilter: React.FC = () => {
         dispatch(changeFilterNumber(Number(e.target.value)));
     };
 
-
     return (
-        <div>
+        <div className="p-4 bg-gray-100 rounded-lg shadow-md space-y-2">
+            <h3 className="text-lg font-semibold text-gray-700 mb-2">Price Range</h3>
             {priceRanges.map((el) => (
-                <div key={el.filter}>
+                <div key={el.filter} className="flex items-center space-x-2">
                     <input
+                        defaultChecked={el.filter > 5000}
                         type="radio"
                         onChange={changePrice}
                         value={el.filter}
                         name="price-filter-group"
                         id={el.string}
+                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                     />
-                    <label htmlFor={el.string}>{el.string}</label>
+                    <label htmlFor={el.string} className="text-sm text-gray-700 font-medium">
+                        {el.string}
+                    </label>
                 </div>
             ))}
         </div>
