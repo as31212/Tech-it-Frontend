@@ -1,25 +1,18 @@
 import { ChangeEvent, useEffect } from "react";
 import useFetchCategories from "../hooks/useFetchCategories";
-import { useDispatch } from "react-redux";
-import { addCategoryToFilter,removeCategoryFromFilter } from "../redux/slices/productFilterSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
+import { toggleCategory } from "../redux/slices/productFilters";
 
 const CategoryFilter: React.FC = () => {
-  const { error, loading, categories, fetchCategories } = useFetchCategories();
+  const { error, loading, categories } = useFetchCategories();
+  const categoryFilter = useSelector(
+    (state: reduxStoreInterface) => state.productFilters.categories
+  );
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    fetchCategories();
-  }, []);
-
-  const handleChange = (e:ChangeEvent<HTMLInputElement>)=>{
-    if(e?.target.checked){
-      dispatch(addCategoryToFilter(e.target.value))
-    }
-    else{
-      dispatch(removeCategoryFromFilter(e.target.value));
-    }
-  }
-
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+   dispatch(toggleCategory(e.target.value));
+  };
 
   return (
     <>
@@ -28,10 +21,14 @@ const CategoryFilter: React.FC = () => {
       ) : error ? (
         <p className="text-red-500 text-center">Error loading categories</p>
       ) : (
-        <div id="category-filter" className="flex flex-wrap gap-4 p-4 bg-gray-100 rounded-lg shadow-md">
+        <div
+          id="category-filter"
+          className="flex flex-wrap gap-4 p-4 bg-gray-100 rounded-lg shadow-md"
+        >
           {categories.map((el) => (
             <div key={el._id} className="flex items-center space-x-2">
               <input
+                checked={categoryFilter.includes(el.name)}
                 onChange={handleChange}
                 type="checkbox"
                 value={el.name}
@@ -39,7 +36,10 @@ const CategoryFilter: React.FC = () => {
                 id={`${el.name}-category`}
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
               />
-              <label htmlFor={`${el.name}-category`} className="text-sm font-semibold text-gray-700">
+              <label
+                htmlFor={`${el.name}-category`}
+                className="text-sm font-semibold text-gray-700"
+              >
                 {el.name}
               </label>
             </div>

@@ -1,10 +1,11 @@
 import { ChangeEvent } from "react";
-import { useDispatch } from "react-redux";
-import { changeFilterNumber } from "../redux/slices/priceFilterSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setPrice } from "../redux/slices/productFilters";
+import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 
 const PriceFilter: React.FC = () => {
     const priceRanges = [
-        { string: "All", filter: 1000000 },
+        { string: "All", filter: null }, // 'All' should have a null value
         { string: "Under $20", filter: 20 },
         { string: "Under $50", filter: 50 },
         { string: "Under $100", filter: 100 },
@@ -16,9 +17,13 @@ const PriceFilter: React.FC = () => {
     ];
 
     const dispatch = useDispatch();
+    const priceFilter = useSelector((state: reduxStoreInterface) => state.productFilters.price);
 
     const changePrice = (e: ChangeEvent<HTMLInputElement>) => {
-        dispatch(changeFilterNumber(Number(e.target.value)));
+        const selectedPrice = e.target.value === 'null' ? null : Number(e.target.value);
+        
+        // Dispatching the new price value, even if it is null (resetting)
+        dispatch(setPrice(selectedPrice));
     };
 
     return (
@@ -27,10 +32,10 @@ const PriceFilter: React.FC = () => {
             {priceRanges.map((el) => (
                 <div key={el.filter} className="flex items-center space-x-2">
                     <input
-                        defaultChecked={el.filter > 5000}
+                        checked={priceFilter === el.filter}
                         type="radio"
                         onChange={changePrice}
-                        value={el.filter}
+                        value={el.filter === null ? "null" : el.filter} // Set the value as 'null' for the 'All' option
                         name="price-filter-group"
                         id={el.string}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"

@@ -2,6 +2,7 @@ import { productDataInterface } from "./productDataInterface";
 import { userDataInterface } from "./userDataInterface";
 import { cartInterface } from "./cartInterface";
 import { priceDataInterface } from "./priceDataInterface";
+import { productFilterInterface } from "./productFiltersInterface";
 
 export interface reduxStoreInterface{
     "userData":userDataInterface,
@@ -10,7 +11,5 @@ export interface reduxStoreInterface{
     "product":productDataInterface,
     "cart": cartInterface[];
     "priceData": priceDataInterface;
-    "priceFilter": number;
-    "productFilter": string[];
-    "productQuery": string;
+    "productFilters": productFilterInterface; 
 }
