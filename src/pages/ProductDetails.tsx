@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useFetchOneProduct from "../hooks/useFetchOneProduct";
-import { productDataInterface } from "../interfaces/productDataInterface";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 import Loading from "../components/Loading";
 
