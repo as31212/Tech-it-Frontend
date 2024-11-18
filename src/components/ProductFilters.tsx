@@ -1,5 +1,6 @@
 import CategoryFilter from "./CategoryFilter";
 import PriceFilter from "./PriceFilter";
+import Sort from "./Sort";
 
 const ProductFilters: React.FC = () => {
   return (
@@ -8,6 +9,7 @@ const ProductFilters: React.FC = () => {
       id="product-filters"
     >
       <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">Filters</h2>
+      <Sort/>
       <CategoryFilter />
       <PriceFilter />
     </div>
