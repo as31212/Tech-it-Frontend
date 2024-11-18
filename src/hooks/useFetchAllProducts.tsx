@@ -25,6 +25,9 @@ export const useFetchProducts = () => {
     if (filters.sort) {
       params.append("sort", filters.sort);
     }
+    if(filters.page){
+      params.append("page",filters.page.toString());
+    }
 
     return params.toString();
   };

@@ -8,10 +8,11 @@ import Loading from "../components/Loading";
 import { Outlet, useParams } from "react-router-dom";
 import { useSyncQueryParams } from "../hooks/useSyncQueryParams";
 import { useInitializeFilter } from "../hooks/useInitializeFilter";
+import Pagination from "../components/Pagination";
 
 export const Products: React.FC = () => {
   const { id } = useParams(); // Check if the route has an :id parameter
-  const productData: productDataInterface[] = useSelector(
+  const productData: productDataInterface = useSelector(
     (state: reduxStoreInterface) => state.productData
   );
   const filter = useSelector((state: reduxStoreInterface) => state.productFilters);
@@ -39,24 +40,28 @@ export const Products: React.FC = () => {
         </div>
 
         {/* Products */}
-        <div
-          id="products-container"
-          className=" flex flex-wrap justify-center gap-5"
-        >
-          {loading && <Loading />}
-          {error && <p className="text-red-600">{error}</p>}
-          {productData.map((el: productDataInterface) => (
-            <ProductCard
-              key={el._id}
-              _id={el._id}
-              name={el.name}
-              description={el.description}
-              price={el.price}
-              mainImage={el.mainImage}
-              categories={el.categories}
-            />
-          ))}
+        <div id="pagination-products">
+          <div
+            id="products-container"
+            className=" flex flex-wrap justify-center gap-5"
+          >
+            {loading && <Loading />}
+            {error && <p className="text-red-600">{error}</p>}
+            {productData.data.map((el) => (
+              <ProductCard
+                key={el._id}
+                _id={el._id}
+                name={el.name}
+                description={el.description}
+                price={el.price}
+                mainImage={el.mainImage}
+                categories={el.categories}
+              />
+            ))}
+          </div>
+          <Pagination/>
         </div>
+        
       </div>
     </div>
   );

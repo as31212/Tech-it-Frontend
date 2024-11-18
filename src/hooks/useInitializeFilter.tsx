@@ -11,9 +11,12 @@ export const useInitializeFilter = () => {
     const filters = {
       price: searchParams.get("price") ? Number(searchParams.get("price")) : null,
       categories: searchParams.getAll("categories"), // Handles multiple categories
+      page: searchParams.get("page") || 1,
       sort: searchParams.get("sort") || "",
     };
 
     dispatch(initializeFilter(filters));
   }, [searchParams]);
 };
+
+

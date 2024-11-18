@@ -17,6 +17,9 @@ export const useSyncQueryParams = (filters:productFilterInterface) => {
     if (filters.sort) {
       params.append("sort", filters.sort);
     }
+    if(filters.page){
+      params.append("page",filters.page.toString());
+    }
 
     setSearchParams(params);
   }, [filters]);
