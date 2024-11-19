@@ -30,11 +30,10 @@
   - [x] Dropdown should display options like logout and settings.
 
 ## 6. Create a pagination system in the frontend
-
+- [x]
 ## 7. Create a filtering system in the products page
--[] filter based on category
--[] filter based on price
--[] filter based on potential brands if you end up changing the mock data company names
+-[x] filter based on category
+-[x] filter based on price
 
 ## 8. Create a cart sidebar/modal that appears when a user adds an item to their cart
 -[] it should have an option to continue shopping or go to cart

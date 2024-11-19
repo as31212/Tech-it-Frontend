@@ -14,7 +14,8 @@ const Pagination: React.FC = () => {
 
     useEffect(() => {
         window.scrollTo({
-            top: 0 
+            top: 0, 
+            behavior: "smooth"
         });
     }, [currentPage]);
 

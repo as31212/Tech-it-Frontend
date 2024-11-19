@@ -11,6 +11,7 @@ import { Wishlist } from "./pages/Wishlist";
 import { Loading } from "./pages/Loading";
 import { useEffect } from "react";
 import useRetrieveUser from "./hooks/useRetrieveUser";
+import Footer from "./components/Footer";
 
 function App() {
   const { retrieveUser } = useRetrieveUser();
@@ -35,6 +36,7 @@ function App() {
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Register" element={<Register />} />
         </Routes>
+        <Footer/>
       </Router>
     </>
   );
