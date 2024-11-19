@@ -12,6 +12,7 @@ import { Loading } from "./pages/Loading";
 import { useEffect } from "react";
 import useRetrieveUser from "./hooks/useRetrieveUser";
 import Footer from "./components/Footer";
+import ProductModal from "./components/ProductModal";
 
 function App() {
   const { retrieveUser } = useRetrieveUser();
@@ -24,6 +25,7 @@ function App() {
     <>
       <Router>
         <Nav />
+        <ProductModal/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Loading" element={<Loading />} />

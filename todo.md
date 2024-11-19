@@ -41,3 +41,7 @@
 -[] gray the rest of the screen
 
 ## 9. finish the delete cart item hook and then add the logic to cart card component, remember this requires a delete request 
+-[x]
+
+## 10. Take some designs from here.io
+-[]

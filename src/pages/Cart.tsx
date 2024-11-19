@@ -20,7 +20,7 @@ export const Cart: React.FC = () => {
   }, [userData, location, ]);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 p-4">
+    <div className="flex flex-col lg:flex-row gap-8 p-4 min-h-screen">
       {/* Cart Items Section */}
       <div className="flex flex-col w-2/3">
         {loading && <p>Loading...</p>}

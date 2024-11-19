@@ -6,7 +6,7 @@ import productReducer from "./slices/productSlice";
 import cartDataReducer from "./slices/cartDataSlice";
 import priceDataReducer from "./slices/priceDataSlice";
 import productFilterReducer from "./slices/productFilters";
-
+import modalDataReducer from "./slices/modalData";
 
 const reduxStore = configureStore({
     reducer:{
@@ -17,7 +17,7 @@ const reduxStore = configureStore({
         "cart": cartDataReducer, //for cart page and potential side bar
         "priceData": priceDataReducer, //for order summary price info
         "productFilters": productFilterReducer,
-        
+        "modalData": modalDataReducer,
     }
 });
 

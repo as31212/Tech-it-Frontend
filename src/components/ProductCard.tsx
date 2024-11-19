@@ -1,8 +1,9 @@
 import { productCardInterface } from "../interfaces/productCardInterace";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import useAddToCart from "../hooks/useAddToCart";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
+import { updateModalItem,toggleModal } from "../redux/slices/modalData";
 
 const ProductCard: React.FC<productCardInterface> = ({
   _id,
@@ -16,6 +17,7 @@ const ProductCard: React.FC<productCardInterface> = ({
   const userData = useSelector((state: reduxStoreInterface) => state.userData);
   const token = useSelector((state: reduxStoreInterface) => state.token);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <div
@@ -57,12 +59,16 @@ const ProductCard: React.FC<productCardInterface> = ({
         <button
           onClick={() => {
             if (userData.auth) {
-              addToUserCart(
-                `http://localhost:4005/cart/add/${userData.id}`,
-                token,
-                _id,
-                1
-              );
+              
+                addToUserCart(
+                  `http://localhost:4005/cart/add/${userData.id}`,
+                  token,
+                  _id,
+                  1
+                );
+                dispatch(updateModalItem(_id));
+                dispatch(toggleModal());
+              
             } else {
               addToLocalCart(_id, 1);
             }
