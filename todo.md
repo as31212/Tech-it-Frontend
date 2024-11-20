@@ -36,9 +36,9 @@
 -[x] filter based on price
 
 ## 8. Create a cart sidebar/modal that appears when a user adds an item to their cart
--[] it should have an option to continue shopping or go to cart
--[] make sure that you must interact with the modal to continue any functions
--[] gray the rest of the screen
+-[x] it should have an option to continue shopping or go to cart
+-[x] make sure that you must interact with the modal to continue any functions
+-[x] gray the rest of the screen
 
 ## 9. finish the delete cart item hook and then add the logic to cart card component, remember this requires a delete request 
 -[x]

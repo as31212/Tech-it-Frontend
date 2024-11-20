@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 import { useLocation } from "react-router-dom";
 import OrderSummary from "../components/OrderSummary";
+import CartAccess from "../components/CartAccess";
+import CartEmpty from "../components/CartEmpty";
 
 export const Cart: React.FC = () => {
   const { loading, error, fetchUserCart } = useFetchUserCart();
@@ -22,7 +24,8 @@ export const Cart: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row gap-8 p-4 min-h-screen">
       {/* Cart Items Section */}
-      <div className="flex flex-col w-2/3">
+      <div className={`flex flex-col gap-5 w-2/3 ${!userData.auth || cart.length < 1 ? "hidden":""}`}>
+      
         {loading && <p>Loading...</p>}
         {cart.length > 0 ? (
           cart.map((el) => (
@@ -36,11 +39,14 @@ export const Cart: React.FC = () => {
             />
           ))
         ) : (
-          <p>Your cart is empty.</p>
+          <p className={`${userData.auth ? "":"hidden"}`}>Your cart is empty.</p>
         )}
         {error && <p className="text-red-400 mt-2">{error}</p>}
-      </div>   
+      </div>  
+      <CartEmpty/> 
       <OrderSummary />
+      <CartAccess/>
+      
     </div>
   );
 };

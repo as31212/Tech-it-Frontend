@@ -27,11 +27,10 @@ export const Register: React.FC = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center h-screen bg-gray-100">
-        <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-md">
-          <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
+      <div className="flex justify-center items-center h-screen">
+        <div className="border-[1px] w-full max-w-lg p-6 bg-white rounded-lg shadow-2xl">
+          <h2 className="font-bold text-center mb-10">Register</h2>
           <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-            {/* Email Field */}
             <InputBox
               placeholder="Email Address"
               onChange={changeInput}
@@ -39,9 +38,6 @@ export const Register: React.FC = () => {
               value={formData.email}
               type="email"
             />
-
-            {/* Password Field */}
-
             <InputBox
               placeholder="Enter your password"
               onChange={changeInput}
@@ -49,9 +45,6 @@ export const Register: React.FC = () => {
               value={formData.password}
               type="password"
             />
-
-            {/* Submit Button */}
-
             <button
               className={`bg-blue-500 text-white w-1/3 min-w-32 mx-auto font-bold py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                 loading ? "opacity-50 disabled:" : ""

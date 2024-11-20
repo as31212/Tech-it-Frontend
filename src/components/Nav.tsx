@@ -13,7 +13,7 @@ export const Nav: React.FC = () => {
 
   return (
     <nav
-    id="nav"
+      id="nav"
       className={`flex justify-between items-center p-4 sticky top-0 z-10 bg-white  text-gray-500 font-bold shadow-md`}
     >
       <Link to="/">
@@ -35,42 +35,33 @@ export const Nav: React.FC = () => {
           onMouseEnter={() => setHovering(true)}
           onMouseLeave={() => setHovering(false)}
         >
-          <Link to="/Profile">PROFILE</Link>
-          <ul
-            className={`flex flex-col border-2 absolute bg-blue-500 text-black ${
-              hovering ? "" : "hidden"
-            }`}
-          >
-            {!userData.auth ? (
-              <Link
-                className="text-white hover:text-blue-500 hover:bg-white px-5 py-2 duration-300 ease-in-out"
-                to="/Login"
+          {userData.auth ? (
+            <div>
+              <Link to="/Profile">PROFILE</Link>
+              <ul
+                className={`flex flex-col border-2 absolute bg-blue-500 text-black ${
+                  hovering ? "" : "hidden"
+                }`}
               >
-                LOGIN
-              </Link>
-            ) : (
-              <li
-                className="text-white hover:text-blue-500 hover:bg-white px-5 py-2 duration-300 ease-in-out"
-                onClick={() => logoutFunc()}
-              >
-                LOGOUT
-              </li>
-            )}
-            <Link
-              to="/Settings"
-              className="text-white hover:text-blue-500 hover:bg-white px-5 py-2 duration-300 ease-in-out"
-            >
-              SETTINGS
-            </Link>
-          </ul>
+                <li
+                  className="text-white hover:text-blue-500 hover:bg-white px-5 py-2 duration-300 ease-in-out"
+                  onClick={() => logoutFunc()}
+                >
+                  LOGOUT
+                </li>
+
+                <Link
+                  to="/Settings"
+                  className="text-white hover:text-blue-500 hover:bg-white px-5 py-2 duration-300 ease-in-out"
+                >
+                  SETTINGS
+                </Link>
+              </ul>
+            </div>
+          ) : (
+            <Link to="/Login">LOGIN</Link>
+          )}
         </li>
-        {userData.role === "admin" ? (
-          <>
-            <li>ADMIN</li>
-          </>
-        ) : (
-          ""
-        )}
       </ul>
       <Link to="/Cart">
         <PiShoppingCartThin className=" text-2xl text-blue-500" />

@@ -7,6 +7,7 @@ import { useEffect } from "react";
 const OrderSummary: React.FC = () => {
   const cart = useSelector((state:reduxStoreInterface)=>state.cart);
   const priceData = useSelector((state:reduxStoreInterface)=>state.priceData);
+  const userData = useSelector((state:reduxStoreInterface)=>state.userData);
   const {changePriceData} = useCheckout();
   useEffect(()=>{
     changePriceData();
@@ -14,7 +15,7 @@ const OrderSummary: React.FC = () => {
   return (
     <>
       {/* Order Summary Section  */}
-      <div className="flex flex-col w-1/3 border p-6 shadow-md sticky top-24 h-fit">
+      <div className={`flex flex-col w-1/3 border p-6 shadow-md sticky top-24 h-fit ${!userData.auth || cart.length < 1 ? "hidden" : ""}`}>
         <h2 className="text-xl font-semibold mb-4 text-center">
           Order Summary
         </h2>
@@ -46,10 +47,10 @@ const OrderSummary: React.FC = () => {
           <span>Total</span>
           <span>${priceData.totalPrice}</span>
         </div>
-        <button className="mt-6 w-full bg-yellow-400 text-black py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">
+        <button className="mt-6 w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition cursor-not-allowed">
           Checkout
         </button>
-        <button className="mt-4 w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition flex items-center justify-center">
+        <button className="mt-4 w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition flex items-center justify-center cursor-not-allowed">
           PayPal Checkout
         </button>
       </div>

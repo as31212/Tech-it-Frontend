@@ -1,9 +1,10 @@
+import SmoothCarousel from "../components/SmoothCarousel";
 
 export const About : React.FC = ()=>{
 
     return(
         <>
-        <h2>About</h2>
+        <div className="min-h-screen"><SmoothCarousel/></div>
         </>
     );
 }
