@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
     const date = new Date();
 
     return (
-        <footer className="bg-blue-500 text-white py-10 px-6 h-[40vh]">
+        <footer className="bg-blue-500 text-white py-10 px-6 h-auto">
             {/* Top Section */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Stay Connected Section */}
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
                             className="flex-1 border border-blue-300 px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                         />
                         <button
-                            className="bg-blue-700 text-white px-6 py-2 rounded-r-md hover:bg-blue-900 transition disabled:cursor-not-allowed"
+                            className="bg-blue-700 text-white px-6 py-2 rounded-r-md hover:bg-blue-900 transition disabled cursor-not-allowed"
                         >
                             Sign Up
                         </button>
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Facebook"
-                            className="hover:text-blue-800"
+                            className="hover:text-blue-800 duration-150 ease-in-out"
                         >
                             <FaFacebook size={24} />
                         </a>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Instagram"
-                            className="hover:text-blue-800"
+                            className="hover:text-blue-800 duration-150 ease-in-out"
                         >
                             <FaInstagram size={24} />
                         </a>
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="LinkedIn"
-                            className="hover:text-blue-800"
+                            className="hover:text-blue-800 duration-150 ease-in-out"
                         >
                             <FaLinkedin size={24} />
                         </a>
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Twitter"
-                            className="hover:text-blue-800"
+                            className="hover:text-blue-800 duration-150 ease-in-out"
                         >
                             <FaTwitter size={24} />
                         </a>

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Nav } from "./components/Nav";
+import  Nav  from "./components/Nav";
 import { Home } from "./pages/Home";
 import { Cart } from "./pages/Cart";
 import { Products } from "./pages/Products";
@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import useRetrieveUser from "./hooks/useRetrieveUser";
 import Footer from "./components/Footer";
 import ProductModal from "./components/ProductModal";
+import Profile from "./pages/Profile";
 
 function App() {
   const { retrieveUser } = useRetrieveUser();
@@ -37,6 +38,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Register" element={<Register />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
         <Footer/>
       </Router>

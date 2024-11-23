@@ -32,3 +32,38 @@
     cursor: pointer;
 }
 
+/* rotate nav icon logic */
+.rotate-arrow-false {
+    transform: rotate(0deg);
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out; 
+}
+
+
+.rotate-arrow-true {
+    transform: rotate(180deg);
+    transition: transform .2s ease-in-out;
+}
+
+/* nav media queries */
+.nav-ham{
+    display: none;
+}
+@media (max-width:850px) {
+    
+    .nav-norm{
+        display:none ;
+    }
+    .nav-ham{
+        display: flex;
+    }
+    
+}
+
+/* media query for home page fonts */
+@media (max-width:850px){
+    .header-text{
+        font-size: 30px;
+    }
+}
+
