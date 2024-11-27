@@ -62,7 +62,7 @@ const NormalNav: React.FC = () => {
                 }`}
               >
                 <li
-                  className="text-gray-200 hover:text-blue-500 hover:bg-white px-5 py-2 duration-300 ease-in-out"
+                  className="text-white hover:text-blue-500 hover:bg-white px-5 py-2 duration-300 ease-in-out"
                   onClick={() => logoutFunc()}
                 >
                   LOGOUT

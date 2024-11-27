@@ -9,10 +9,11 @@ export const useLogout = () => {
   const logoutFunc = () => {
     localStorage.removeItem("userData");
     localStorage.removeItem("token");
+    localStorage.removeItem("timestamp"); // works in tandem with the useHandleSession hook
     dispatch(logout());
     dispatch(logoutToken());
     console.log("Logged out user");
-    navigate("/Login");
+    navigate("/Login"); // todo this may need to be removed and replaced with a modal that notifies the user that they have been logged out and offers them to log back in or continue becuase in its current state navigate cannot be used outside the context of the router hook meaning you cannot add the hook to the application
   };
   return {logoutFunc}
 };

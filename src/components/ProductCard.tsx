@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAddToCart from "../hooks/useAddToCart";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 import { updateModalItem,toggleModal } from "../redux/slices/modalData";
+import useStringMutation from "../hooks/useStringMutation";
 
 const ProductCard: React.FC<productCardInterface> = ({
   _id,
@@ -18,6 +19,7 @@ const ProductCard: React.FC<productCardInterface> = ({
   const token = useSelector((state: reduxStoreInterface) => state.token);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const {upperCaseFirstCharAll} = useStringMutation();
 
   return (
     <div
@@ -33,7 +35,7 @@ const ProductCard: React.FC<productCardInterface> = ({
 
         <div className="p-4 flex flex-col flex-grow cursor-pointer">
           <h2 className="text-xl font-semibold mb-2 min-h-[48px] group-hover:underline">
-            {name}
+            {upperCaseFirstCharAll(name)}
           </h2>
           <p className="text-lg font-bold text-green-600 mb-2">
             ${price.toFixed(2)}

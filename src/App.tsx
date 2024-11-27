@@ -15,12 +15,16 @@ import Footer from "./components/Footer";
 import ProductModal from "./components/ProductModal";
 import Profile from "./pages/Profile";
 
+
 function App() {
   const { retrieveUser } = useRetrieveUser();
   useEffect(() => {
     //retrieves user data from local storage
     retrieveUser();
   }, []);
+
+  // todo this is where the session handling will go
+  
 
   return (
     <>
