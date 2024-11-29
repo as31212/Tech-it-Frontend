@@ -36,10 +36,14 @@ const NormalNav: React.FC = () => {
       </Link>
       <ul className="flex space-x-32">
         <li>
-          <Link className="" to="/About">ABOUT US</Link>
+          <Link className="" to="/About">
+            ABOUT US
+          </Link>
         </li>
         <li>
-          <Link className="" to="/Products">PRODUCTS</Link>
+          <Link className="" to="/Products">
+            PRODUCTS
+          </Link>
         </li>
         <li
           className="px-5 text-center"
@@ -48,7 +52,13 @@ const NormalNav: React.FC = () => {
         >
           {userData.auth ? (
             <div>
-              <Link className="" to="/Profile">
+              <Link
+                onClick={() => {
+                  setHovering(false);
+                }}
+                className=""
+                to="/Profile"
+              >
                 PROFILE
                 <FaChevronDown
                   className={`inline relative bottom-[1px] ml-1 ${
@@ -63,7 +73,10 @@ const NormalNav: React.FC = () => {
               >
                 <li
                   className="text-white hover:text-blue-500 hover:bg-white px-5 py-2 duration-300 ease-in-out"
-                  onClick={() => logoutFunc()}
+                  onClick={() => {
+                    logoutFunc();
+                    setHovering(false);
+                  }}
                 >
                   LOGOUT
                 </li>
@@ -77,7 +90,9 @@ const NormalNav: React.FC = () => {
               </ul>
             </div>
           ) : (
-            <Link className="" to="/Login">LOGIN</Link>
+            <Link className="" to="/Login">
+              LOGIN
+            </Link>
           )}
         </li>
       </ul>
@@ -100,7 +115,7 @@ const HamburgerNav: React.FC = () => {
       className={`flex justify-between items-center p-4 sticky top-0 z-10 bg-white text-gray-500 font-bold shadow-md nav-ham`}
     >
       {/* Logo */}
-      <Link className="" to="/" onClick={()=> setMenuOpen(false)}>
+      <Link className="" to="/" onClick={() => setMenuOpen(false)}>
         <img
           className="h-12 w-auto"
           src="tech-it-cropped-logo.png"
@@ -140,7 +155,11 @@ const HamburgerNav: React.FC = () => {
         {userData.auth ? (
           <>
             <li>
-              <Link className="" to="/Profile" onClick={() => setMenuOpen(false)}>
+              <Link
+                className=""
+                to="/Profile"
+                onClick={() => setMenuOpen(false)}
+              >
                 PROFILE
               </Link>
             </li>
@@ -173,14 +192,13 @@ const HamburgerNav: React.FC = () => {
           </li>
         )}
         <li>
-              <Link className="" to="/Cart" onClick={() => setMenuOpen(false)}>
-                CART
-              </Link>
-            </li>
+          <Link className="" to="/Cart" onClick={() => setMenuOpen(false)}>
+            CART
+          </Link>
+        </li>
       </motion.ul>
 
       {/* Cart Icon */}
-      
     </nav>
   );
 };
