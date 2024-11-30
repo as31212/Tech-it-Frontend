@@ -110,6 +110,16 @@ const Footer: React.FC = () => {
                 <p>Sitemap</p>
                 <p>&copy; {`${date.getFullYear()} Ahmad Searcy Projects`}</p>
             </div>
+
+            {/* Disclaimer Section */}
+            <div className="mt-6 text-center text-xs text-blue-200 px-4">
+                <p>
+                    <strong>Disclaimer:</strong> "Tech-IT" is a mock company created solely for the purpose of demonstrating 
+                    technical skills in software development. It is not an actual business and is in no way affiliated with, 
+                    endorsed by, or associated with any companies, brands, or entities mentioned within its context. This project 
+                    is for educational and portfolio purposes only.
+                </p>
+            </div>
         </footer>
     );
 };

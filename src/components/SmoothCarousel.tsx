@@ -1,40 +1,44 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-fade";
+interface InfiniteSliderInterface {
+  leftOrRight: boolean; // Determines animation direction
+  images: string[]; // Array of image paths
+}
 
-const mockLogos = [
-  "https://via.placeholder.com/150?text=Bank+of+America",
-  "https://via.placeholder.com/150?text=CME+Group",
-  "https://via.placeholder.com/150?text=BNP+Paribas",
-  "https://via.placeholder.com/150?text=Standard+Chartered",
-  "https://via.placeholder.com/150?text=BMO",
-  "https://via.placeholder.com/150?text=Wells+Fargo",
-];
+const InfiniteLogoSlider: React.FC<InfiniteSliderInterface> = ({ leftOrRight, images }) => {
+  const validImages = images && Array.isArray(images) ? images : [];
+  console.log("Valid Images:", validImages);
 
-const InfiniteLogoSlider: React.FC = () => {
   return (
-    <div className="overflow-hidden w-full py-4 bg-gray-50">
-      <Swiper
-        effect="fade" // Use the built-in fade effect
-        loop={true} // Enable infinite looping
-        autoplay={{
-          delay: 2000, // Delay between transitions (in ms)
-          disableOnInteraction: false, // Keep autoplay running even on interaction
+    <div className="overflow-hidden w-full py-4 relative">
+      <motion.div
+        className="flex w-max"
+        style={{ display: "flex", gap: "2rem" }}
+        animate={{
+          x: leftOrRight ? ["0%", "-100%"] : ["-100%", "0%"],
         }}
-        fadeEffect={{ crossFade: true }} // Optional: Smooth fade transitions
-        speed={1000} // Transition speed for the fade effect
+        transition={{
+          repeat: Infinity,
+          duration: 100, // Adjust speed (higher = slower)
+          ease: "linear",
+        }}
       >
-        {mockLogos.map((logo, index) => (
-          <SwiperSlide key={index}>
-            <div className="flex justify-center items-center h-24">
-              <img src={logo} alt={`Logo ${index + 1}`} className="h-full" />
-            </div>
-          </SwiperSlide>
+        {/* Use validImages repeatedly without a fixed count */}
+        {[...validImages, ...validImages, ...validImages].map((logo, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 flex justify-center items-center h-56"
+            style={{ minWidth: "200px" }}
+          >
+            <img
+              src={logo}
+              alt={`Logo ${index + 1}`}
+              className="h-full object-contain mx-8"
+            />
+          </div>
         ))}
-      </Swiper>
+      </motion.div>
     </div>
   );
 };
