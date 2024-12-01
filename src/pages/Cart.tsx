@@ -7,12 +7,15 @@ import { useLocation } from "react-router-dom";
 import OrderSummary from "../components/OrderSummary";
 import CartAccess from "../components/CartAccess";
 import CartEmpty from "../components/CartEmpty";
+import useScrollHooks from "../hooks/useScrollHooks";
 
 export const Cart: React.FC = () => {
   const { loading, error, fetchUserCart } = useFetchUserCart();
   const cart = useSelector((state: reduxStoreInterface) => state.cart);
   const userData = useSelector((state: reduxStoreInterface) => state.userData);
   const location = useLocation();
+
+  useScrollHooks();
 
   useEffect(() => {
     if (userData.auth) {

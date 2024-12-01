@@ -25,6 +25,18 @@ const MapAnimation: React.FC = () => {
     }),
   };
 
+  const buttonVariant = {
+    hidden: { opacity: 0, y: 50 }, // Button starts off-screen below
+    visible: {
+      opacity: 1,
+      y: 0, // Moves into view
+      transition: {
+        duration: 0.6, // Slightly longer duration for the button
+        delay: 2.2, // Start after all divs are visible
+      },
+    },
+  };
+
   return (
     <div
       id="map-animation-container"
@@ -123,12 +135,14 @@ const MapAnimation: React.FC = () => {
 
 {/* 11 */}
 <motion.div
-        className="w-8 h-8 p-5 rounded-full bg-white rotate-[45deg] mx-auto"
-        custom={10}
+        className="text-lg font-semibold mt-6 bg-white text-blue-600 inline-block px-6 py-3 rounded-lg shadow-lg mx-auto"
         initial="hidden"
         animate={controls}
-        variants={fadeInVariant}
-      ></motion.div>
+        variants={buttonVariant}
+        whileHover={{ scale: 1.1 }}
+      >
+        Delivery ID: <span className="font-bold">#1234-5678</span>
+      </motion.div>
     </div>
   );
 };

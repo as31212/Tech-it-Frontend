@@ -3,8 +3,10 @@ import { InputBox } from "../components/InputBox";
 import { ChangeEvent, useState } from "react";
 import { formDataInterface } from "../interfaces/formDataInterface";
 import { useLogin } from "../hooks/useLogin";
+import useScrollHooks from "../hooks/useScrollHooks";
 
 export const Login: React.FC = () => {
+  useScrollHooks();
   const [formData, setUserData] = useState<formDataInterface>({
     email: "",
     password: "",

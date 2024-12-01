@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 import { userDataInterface } from "../interfaces/userDataInterface";
+import useScrollHooks from "../hooks/useScrollHooks";
 
 const Profile: React.FC = () =>{
+  useScrollHooks();
     const token = localStorage.getItem("token") || null;
   const userData:userDataInterface = useSelector((state:reduxStoreInterface) => state.userData);
 

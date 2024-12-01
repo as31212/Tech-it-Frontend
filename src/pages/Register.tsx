@@ -2,8 +2,10 @@ import { ChangeEvent, useState } from "react";
 import { useRegister } from "../hooks/useRegister";
 import { formDataInterface } from "../interfaces/formDataInterface";
 import { InputBox } from "../components/InputBox";
+import useScrollHooks from "../hooks/useScrollHooks";
 
 export const Register: React.FC = () => {
+  useScrollHooks();
   const { registerUser, loading, error } = useRegister(); //how import hook
   const [formData, setUserData] = useState<formDataInterface>({
     email: "",

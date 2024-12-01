@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import InfiniteLogoSlider from "../components/SmoothCarousel";
 import MapAnimation from "../components/MapAnimation";
 import { useEffect, useState } from "react";
+import useScrollHooks from "../hooks/useScrollHooks";
 
 export const About: React.FC = () => {
+  useScrollHooks();
   const titleArray = [
     "YOU",
     "HIM",
@@ -21,12 +23,12 @@ export const About: React.FC = () => {
     for (let i = 0; i < titleArray.length * 2; i++) {
       setTimeout(() => {
         setTitle([...titleArray, ...titleArray][i]);
-      }, i * 120);
+      }, i * 140);
     }
   }, []);
 
   const metrics = [
-    { label: "Items Sold", value: 5000 },
+    { label: "Items Sold", value: 100000 },
     { label: "Partners", value: 200 },
     { label: "Store Locations", value: 150 },
   ];
@@ -94,14 +96,24 @@ export const About: React.FC = () => {
         >
           <div className="text-center">
             <div className="min-h-[30vh]">
-              <h2 className="text-7xl font-bold text-gray-800 mb-6">
+              <motion.h2 
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{once:true}}
+              className="text-7xl font-bold text-gray-800 mb-6">
                 WE PARTNER WITH...
-              </h2>
-              <p className="text-gray-600 mb-8">
+              </motion.h2>
+              <motion.p
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{once:true}}
+              className="text-gray-600 mb-8">
                 We are proud to partner with some of the most innovative
                 companies in the tech industry (Fake Sponsorship to display
                 technical ability).
-              </p>
+              </motion.p>
             </div>
             <InfiniteLogoSlider
               leftOrRight={true}
@@ -125,7 +137,7 @@ export const About: React.FC = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-12 mt-16 h-screen"
+          className="bg-gradient-to-r from-blue-500 to-purple-600 text-white pb-20 pt-40 mt-16 h-screen"
         >
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Tech-IT Delivery System</h2>
@@ -135,12 +147,6 @@ export const About: React.FC = () => {
               ID for every order, you can stay updated at every step.
             </p>
             <MapAnimation />
-            <motion.div
-              className="text-lg font-semibold mt-6 bg-white text-blue-600 inline-block px-6 py-3 rounded-lg shadow-lg"
-              whileHover={{ scale: 1.1 }}
-            >
-              Delivery ID: <span className="font-bold">#1234-5678</span>
-            </motion.div>
           </div>
         </motion.div>
 
