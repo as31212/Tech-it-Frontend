@@ -8,12 +8,12 @@ import { Register } from "./pages/Register";
 import { About } from "./pages/About";
 import { ProductDetails } from "./pages/ProductDetails";
 import { Wishlist } from "./pages/Wishlist";
-import { Loading } from "./pages/Loading";
 import { useEffect } from "react";
 import useRetrieveUser from "./hooks/useRetrieveUser";
 import Footer from "./components/Footer";
 import ProductModal from "./components/ProductModal";
 import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 
 
 function App() {
@@ -33,7 +33,6 @@ function App() {
         <ProductModal/>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Loading" element={<Loading />} />
           <Route path="/Wishlist/:id" element={<Wishlist />} />
           <Route path="/About" element={<About />} />
           <Route path="/Products" element={<Products />}>
@@ -43,6 +42,7 @@ function App() {
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/Settings" element={<Settings />} />
         </Routes>
         <Footer/>
       </Router>

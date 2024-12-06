@@ -5,7 +5,7 @@ export const Home: React.FC = () => {
   useScrollHooks();
   return (
     <>
-    <div className="h-screen p-2"><Carousel/></div>
+    <div className="pb-12"><Carousel/></div>
 
      
     </>

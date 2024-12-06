@@ -11,7 +11,12 @@ const InfiniteLogoSlider: React.FC<InfiniteSliderInterface> = ({ leftOrRight, im
   console.log("Valid Images:", validImages);
 
   return (
-    <div className="overflow-hidden w-full py-4 relative">
+    <motion.div 
+    initial={{opacity:0, y:100}}
+    whileInView={{opacity: 1 , y:0}}
+    viewport={{once:true}}
+    transition={{duration:1}}
+    className="overflow-hidden w-full py-4 relative">
       <motion.div
         className="flex w-max"
         style={{ display: "flex", gap: "2rem" }}
@@ -39,7 +44,7 @@ const InfiniteLogoSlider: React.FC<InfiniteSliderInterface> = ({ leftOrRight, im
           </div>
         ))}
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

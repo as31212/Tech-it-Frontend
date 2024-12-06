@@ -4,7 +4,7 @@ const Loading: React.FC = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <motion.div
-        className="w-12 h-12 bg-blue-500 rounded-full"
+        className="w-12 h-12 bg-blue-500 rounded-full relative bottom-[1000px] left-[250px]"
         animate={{
           y: ["0%", "-50%", "0%"], // Bouncing up and down
         }}

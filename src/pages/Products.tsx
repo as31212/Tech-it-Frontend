@@ -9,6 +9,7 @@ import { Outlet, useParams } from "react-router-dom";
 import { useSyncQueryParams } from "../hooks/useSyncQueryParams";
 import { useInitializeFilter } from "../hooks/useInitializeFilter";
 import Pagination from "../components/Pagination";
+import { FourOFour,NoItemFound } from "../components/Error";
 
 export const Products: React.FC = () => {
   const { id } = useParams(); // Check if the route has an :id parameter
@@ -35,19 +36,19 @@ export const Products: React.FC = () => {
     <div className="p-5">
       <div className="flex">
         {/* Filters and Sorting */}
-        <div id="filter-&-sort-container" className="w-1/4">
+
           <ProductFilters />
-        </div>
+
 
         {/* Products */}
         <div id="pagination-products">
           <div
             id="products-container"
-            className=" flex flex-wrap justify-center gap-5"
+            className=" flex flex-wrap justify-center gap-5 w-3/4"
           >
             {loading && <Loading />}
             {error && <p className="text-red-600">{error}</p>}
-            {productData.data.map((el) => (
+            {productData.data.length > 1 ? productData.data.map((el) => (
               <ProductCard
                 key={el._id}
                 _id={el._id}
@@ -57,7 +58,7 @@ export const Products: React.FC = () => {
                 mainImage={el.mainImage}
                 categories={el.categories}
               />
-            ))}
+            )): <NoItemFound/>}
           </div>
           <Pagination/>
         </div>
