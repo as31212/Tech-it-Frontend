@@ -3,6 +3,7 @@ import InfiniteLogoSlider from "../components/SmoothCarousel";
 import MapAnimation from "../components/MapAnimation";
 import { useEffect, useState } from "react";
 import useScrollHooks from "../hooks/useScrollHooks";
+import Metrics from "../components/metrics";
 
 export const About: React.FC = () => {
   useScrollHooks();
@@ -125,6 +126,9 @@ export const About: React.FC = () => {
             <MapAnimation />
           </div>
         </div>
+
+        {/* metrics */}
+            <Metrics/>
 
        
       </div>
