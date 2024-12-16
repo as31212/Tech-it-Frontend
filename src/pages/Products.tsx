@@ -44,7 +44,7 @@ export const Products: React.FC = () => {
         <div id="pagination-products">
           <div
             id="products-container"
-            className=" flex flex-wrap justify-center gap-5 w-3/4"
+            className=" flex flex-wrap gap-5 justify-center"
           >
             {loading && <Loading />}
             {error && <p className="text-red-600">{error}</p>}

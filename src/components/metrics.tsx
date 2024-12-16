@@ -23,23 +23,26 @@ const Metrics: React.FC = () => {
   useEffect(() => {
     if (isInView) {
       // Start animations when in view
-      animate(stores, 1000, { duration: 5 });
-      animate(itemsSold, 12000000, { duration: 5 });
-      animate(years, 20, { duration: 2 });
+      animate(stores, 10000, { duration: 5 });
+      animate(itemsSold, 12000000, { duration: 6 });
+      animate(years, 20, { duration: 4 });
     }
   }, [isInView, stores, itemsSold, years]);
 
   return (
     <motion.div
       ref={ref}
-      className="flex flex-wrap items-center justify-around  p-5 h-[50vh]"
+      className="flex flex-wrap items-center justify-around p-5 min-h-[50vh]"
     >
       <div className="flex flex-col items-center gap-5">
         <FaBirthdayCake className="text-6xl text-blue-500" />
-        <motion.h2 className="text-6xl font-bold text-blue-500">
-          {roundedYears}
-        </motion.h2>
-        <p className="font-bold text-4xl text-blue-500">Years in Business</p>
+        <h2 className="text-6xl font-bold text-blue-500">
+          <motion.span >
+            {roundedYears}
+          </motion.span>
+          +
+        </h2>
+        <p className="font-bold text-4xl text-blue-500 mb-20">Years in Business</p>
       </div>
       <div className="flex flex-col items-center gap-5">
         <IoStorefrontOutline className="text-6xl text-blue-500" />
@@ -47,7 +50,7 @@ const Metrics: React.FC = () => {
         <h2 className="text-6xl font-bold text-blue-500">
           <motion.span>{roundedStores}</motion.span>+
         </h2>
-        <p className="font-bold text-4xl text-blue-500">Stores</p>
+        <p className="font-bold text-4xl text-blue-500 mb-20">Stores</p>
       </div>
       <div className="flex flex-col items-center gap-5">
         <GiReceiveMoney className="text-blue-500 text-6xl" />
@@ -55,7 +58,7 @@ const Metrics: React.FC = () => {
         <h2 className="text-6xl font-bold text-blue-500">
           <motion.span>{roundedItemsSold}</motion.span>+
         </h2>
-        <p className="font-bold text-4xl text-blue-500">Items Sold</p>
+        <p className="font-bold text-4xl text-blue-500 mb-20">Items Sold</p>
       </div>
     </motion.div>
   );

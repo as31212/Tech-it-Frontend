@@ -135,7 +135,7 @@ const MapAnimation: React.FC = () => {
 
 {/* 11 */}
 <motion.div
-        className="text-lg font-semibold mt-6 bg-white text-blue-600 inline-block px-6 py-3 rounded-lg shadow-lg mx-auto"
+        className="text-lg font-semibold mt-6 bg-white text-blue-600 inline-block px-6 py-3 rounded-lg shadow-lg mx-auto mb-10"
         initial="hidden"
         animate={controls}
         variants={buttonVariant}

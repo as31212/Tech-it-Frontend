@@ -44,7 +44,7 @@
 - [x]
 
 ## 10. Take some designs from here.io to complete the about section
-- []
+- [x]
 
 ## 11. Handle jwt session experation 
 - []

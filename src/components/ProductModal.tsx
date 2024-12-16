@@ -16,6 +16,9 @@ const ProductModal: React.FC = () => {
   const { loading, error, fetchProduct } = useFetchOneProduct();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isMobile = () => {
+    return /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+  };
 
   useEffect(() => {
     if (modalData.modalItem) {
@@ -60,7 +63,7 @@ const ProductModal: React.FC = () => {
 
       {/* Modal */}
       <motion.div
-        className={`fixed top-0 right-0 z-30 bg-white shadow-lg w-[30vw] h-full flex flex-col rounded-lg`}
+        className={`fixed top-0 right-0 z-30 bg-white shadow-lg h-full flex flex-col rounded-lg  ${isMobile() ? "w-[100vw]" : "min-w-[500px] w-[30vw]"}`}
         initial="hidden"
         animate={modalData.isActive ? "visible" : "hidden"}
         exit="hidden"

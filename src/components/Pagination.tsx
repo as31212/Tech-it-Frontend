@@ -31,7 +31,7 @@ const Pagination: React.FC = () => {
                         currentPage === pageNumber
                             ? "bg-blue-700 text-white scale-105"
                             : "bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
-                    }`}
+                    } ${pageNumber >= currentPage + 3   || pageNumber <= currentPage - 3 ? "hidden" : ""}`}
                 >
                     {pageNumber}
                 </div>
@@ -53,6 +53,10 @@ const Pagination: React.FC = () => {
             {/* Page Numbers */}
             <div className="flex gap-2">{renderPageNumbers()}</div>
 
+            <div className={`rounded-full w-8 h-8 flex items-center justify-center bg-blue-500 text-white font-medium text-sm ${totalPages > currentPage + 3}`}>
+                ...
+            </div>
+
             {/* Increment Button */}
             <button
                 onClick={() => dispatch(incrementPage(totalPages))} // Prevent exceeding total pages
@@ -61,6 +65,7 @@ const Pagination: React.FC = () => {
             >
                 &gt;
             </button>
+            
         </div>
     );
 };
