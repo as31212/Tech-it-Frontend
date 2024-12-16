@@ -5,14 +5,12 @@ import ProductFilters from "../components/ProductFilters";
 import ProductCard from "../components/ProductCard";
 import { productDataInterface } from "../interfaces/productDataInterface";
 import Loading from "../components/Loading";
-import { Outlet, useParams } from "react-router-dom";
 import { useSyncQueryParams } from "../hooks/useSyncQueryParams";
 import { useInitializeFilter } from "../hooks/useInitializeFilter";
 import Pagination from "../components/Pagination";
 import { FourOFour,NoItemFound } from "../components/Error";
 
 export const Products: React.FC = () => {
-  const { id } = useParams(); // Check if the route has an :id parameter
   const productData: productDataInterface = useSelector(
     (state: reduxStoreInterface) => state.productData
   );
@@ -28,9 +26,7 @@ export const Products: React.FC = () => {
   const { loading, error } = useFetchProducts();
 
   // Render only the Outlet if the route contains an :id parameter
-  if (id) {
-    return <Outlet />;
-  }
+ 
 
   return (
     <div className="p-5">
