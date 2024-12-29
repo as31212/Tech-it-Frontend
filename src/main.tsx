@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import './media-queries/cart-media-queries.css'
+
 import { Provider } from 'react-redux'
 import reduxStore from './redux/store.ts'
 

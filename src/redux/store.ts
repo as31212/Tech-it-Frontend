@@ -7,6 +7,7 @@ import cartDataReducer from "./slices/cartDataSlice";
 import priceDataReducer from "./slices/priceDataSlice";
 import productFilterReducer from "./slices/productFilters";
 import modalDataReducer from "./slices/modalData";
+import sessionReducer from "./slices/sessionSlice";
 
 const reduxStore = configureStore({
     reducer:{
@@ -18,6 +19,7 @@ const reduxStore = configureStore({
         "priceData": priceDataReducer, //for order summary price info
         "productFilters": productFilterReducer,
         "modalData": modalDataReducer,
+        "sessionData": sessionReducer,
     }
 });
 

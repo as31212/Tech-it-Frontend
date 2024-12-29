@@ -27,7 +27,7 @@ export const Cart: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row gap-8 p-4 min-h-screen">
       {/* Cart Items Section */}
-      <div className={`flex flex-col gap-5 w-2/3 ${!userData.auth || cart.length < 1 ? "hidden":""}`}>
+      <div id="cart-card-container" className={`flex flex-col gap-5 w-2/3 ${!userData.auth || cart.length < 1 ? "hidden":""}`}>
       
         {loading && <p>Loading...</p>}
         {cart.length > 0 ? (

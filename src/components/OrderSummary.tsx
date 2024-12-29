@@ -15,7 +15,7 @@ const OrderSummary: React.FC = () => {
   return (
     <>
       {/* Order Summary Section  */}
-      <div className={`flex flex-col w-1/3 border p-6 shadow-md sticky top-24 h-fit ${!userData.auth || cart.length < 1 ? "hidden" : ""}`}>
+      <div id="Order-Summary" className={`flex flex-col w-1/3 border p-6 shadow-md sticky top-24 h-fit ${!userData.auth || cart.length < 1 ? "hidden" : ""}`}>
         <h2 className="text-xl font-semibold mb-4 text-center">
           Order Summary
         </h2>

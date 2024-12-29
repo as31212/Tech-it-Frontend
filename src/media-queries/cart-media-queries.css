@@ -1,0 +1,17 @@
+
+@media(max-width:1050px){
+    #Order-Summary{
+        max-width: 100%;
+        width: 100%;
+        padding: 10px;
+    }
+    .cart-card{
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    #cart-card-container{
+        width: 100%;
+        padding: 1rem;
+    }
+}

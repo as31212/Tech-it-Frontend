@@ -47,7 +47,8 @@
 - [x]
 
 ## 11. Handle jwt session experation 
-- []
+- [x] create the redux state to express session activity
+- [] create a component modal that will notify the user of expiration or if expiration is about to occur 
 
 ## 12. make the app responsive
 - []

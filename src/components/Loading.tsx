@@ -1,20 +1,12 @@
-import { motion } from "framer-motion";
+
 
 const Loading: React.FC = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <motion.div
-        className="w-12 h-12 bg-blue-500 rounded-full relative bottom-[1000px] left-[250px]"
-        animate={{
-          y: ["0%", "-50%", "0%"], // Bouncing up and down
-        }}
-        transition={{
-          duration: 0.5,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-    </div>
+<div className="flex flex-row gap-2">
+  <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+  <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.3s]"></div>
+  <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:.7s]"></div>
+</div>
   );
 };
 

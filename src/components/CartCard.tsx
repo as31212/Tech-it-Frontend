@@ -8,6 +8,7 @@ import useFetchUserCart from "../hooks/useFetchUserCart";
 import useRemoveCartItem from "../hooks/useRemoveCartItem";
 import { FaRegTrashAlt } from "react-icons/fa";
 
+
 const CartCard: React.FC<cartCardInterface> = ({
   name,
   productId,
@@ -34,7 +35,7 @@ const CartCard: React.FC<cartCardInterface> = ({
 
 
   return (
-    <div className="flex items-center justify-between border p-4 shadow-md w-full">
+    <div className="flex items-center justify-between border p-4 shadow-md w-full cart-card">
       <img
         className="h-44 object-cover rounded-md"
         src={mainImage}

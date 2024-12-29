@@ -7,7 +7,10 @@ import { useState } from "react";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+
 const Nav: React.FC = () => {
+
+
   return (
     <>
       <NormalNav />

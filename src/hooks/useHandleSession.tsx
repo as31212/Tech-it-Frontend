@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { useLogout } from "./useLogout";
+import { setSessionStatus } from "../redux/slices/sessionSlice";
+import { useDispatch,useSelector } from "react-redux";
 
 const useHandleSession = () => {
   const { logoutFunc } = useLogout();
+  const dispatch = useDispatch();
 
   const handleSession = () => {
     const currentTimestamp = new Date().getTime();
@@ -10,12 +13,18 @@ const useHandleSession = () => {
 
     if (storedTimestamp) {
       const timeDifference = currentTimestamp - parseInt(storedTimestamp, 10);
-      if (timeDifference > 3600000) {
+      if (timeDifference > 1000 /*3600000*/) {
         // 1 hour in milliseconds
+        dispatch(setSessionStatus("inactive"));
         logoutFunc();
       }
+      else if(timeDifference > 3000000){
+        dispatch(setSessionStatus("session warning"));
+      }
+      
     } else {
       localStorage.setItem("timestamp", JSON.stringify(currentTimestamp));
+      dispatch(setSessionStatus("active"));
     }
   };
 

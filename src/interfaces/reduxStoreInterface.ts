@@ -4,6 +4,7 @@ import { cartInterface } from "./cartInterface";
 import { priceDataInterface } from "./priceDataInterface";
 import { productFilterInterface } from "./productFiltersInterface";
 import { modalInterface } from "./modalInterface";
+import { sessionInterface } from "./sessionInterface";
 
 export interface reduxStoreInterface{
     "userData":userDataInterface,
@@ -13,5 +14,6 @@ export interface reduxStoreInterface{
     "cart": cartInterface[];
     "priceData": priceDataInterface;
     "productFilters": productFilterInterface;
-    "modalData": modalInterface; 
+    "modalData": modalInterface;
+    "sessionData":sessionInterface; 
 }
