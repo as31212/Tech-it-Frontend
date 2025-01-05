@@ -1,5 +1,5 @@
 
-@media(max-width:1050px){
+@media(max-width:1150px){
     #Order-Summary{
         max-width: 100%;
         width: 100%;
@@ -13,5 +13,11 @@
     #cart-card-container{
         width: 100%;
         padding: 1rem;
+    }
+}
+@media (max-width:600px) {
+    .cart-card{
+        flex-direction: column;
+        gap: 2rem;
     }
 }
