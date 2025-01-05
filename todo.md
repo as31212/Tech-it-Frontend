@@ -51,5 +51,11 @@
 - [] create a component modal that will notify the user of expiration or if expiration is about to occur 
 
 ## 12. make the app responsive
-- []
+- [x] cart page
+- [x] settings
+- [] login / sign-in
+- [x] profile
+- [] products
+- [] about us
+- [] home
 
