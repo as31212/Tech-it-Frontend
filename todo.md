@@ -53,9 +53,11 @@
 ## 12. make the app responsive
 - [x] cart page
 - [x] settings
-- [] login / sign-in
+- [x] login / sign-in
 - [x] profile
+- [] home
 - [] products
 - [] about us
-- [] home
+
+## 13. remove the local cart or implement a local cart for users who are not logged in
 
