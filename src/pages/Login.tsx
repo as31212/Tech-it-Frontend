@@ -30,7 +30,7 @@ export const Login: React.FC = () => {
     <>
       <div className="h-screen flex flex-col items-center justify-center">
         <div
-          className="border-[1px] p-5 w-[500px] min-w-fit flex flex-col shadow-2xl rounded-md"
+          className="border-[1px] p-5 max-w-[30rem] min-w-fit w-[80%] flex flex-col shadow-2xl rounded-md"
           id="login-box"
         >
           <h2 className="font-bold text-center mb-10">Login</h2>

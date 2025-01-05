@@ -30,7 +30,7 @@ export const Register: React.FC = () => {
   return (
     <>
       <div className="flex justify-center items-center h-screen">
-        <div className="border-[1px] w-full max-w-lg p-6 bg-white rounded-lg shadow-2xl">
+        <div className="border-[1px] p-5 max-w-[30rem] min-w-fit w-[80%] flex flex-col shadow-2xl rounded-md">
           <h2 className="font-bold text-center mb-10">Register</h2>
           <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
             <InputBox
