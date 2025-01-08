@@ -6,8 +6,8 @@ const CarouselSlide1: React.FC<carouselSlideInterface> = ({ title, description, 
     const controls = useAnimation();
 
     return (
-        <div className="flex justify-center items-center h-full flex-wrap ">
-            <div className="flex flex-col gap-5 justify-center max-w-[700px]">
+        <div className="flex justify-center items-center h-full flex-wrap carousel-1 ">
+            <div className="flex flex-col gap-5 justify-center max-w-[700px] carousel-text p-5">
                 <motion.h2
                     initial={{ opacity: 0, x: -300 }}
                     animate={controls}
@@ -30,7 +30,7 @@ const CarouselSlide1: React.FC<carouselSlideInterface> = ({ title, description, 
                         controls.stop();
                         controls.set({ opacity: 0 });
                     }}
-                    className="text-gray-800 w-[90%] center-description"
+                    className="text-gray-800 carousel-description"
                 >
                     {description}
                 </motion.p>
@@ -58,7 +58,7 @@ const CarouselSlide1: React.FC<carouselSlideInterface> = ({ title, description, 
                     controls.stop();
                     controls.set({ opacity: 0, x: 300 });
                 }}
-                className="w-1/3 min-w-[300px]"
+                className="w-1/3 min-w-[300px] home-carousel-image"
                 src={image}
                 alt="Carousel Image"
             />

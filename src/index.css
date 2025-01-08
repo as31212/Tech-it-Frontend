@@ -60,22 +60,4 @@
     
 }
 
-/* media query for home page fonts */
-@media (max-width:850px){
-    .header-text{
-        font-size: 30px;
-    }
-}
 
-/* title about us */
-.fixed-width-title {
-    display: inline-block;
-    position: relative;
-    top: 20px;
-    width: 9ch; /* Adjust this to fit your longest title */
-    height: 3ch;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap; /* Prevent line breaks */
-  }
-  

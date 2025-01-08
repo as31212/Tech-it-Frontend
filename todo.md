@@ -55,9 +55,9 @@
 - [x] settings
 - [x] login / sign-in
 - [x] profile
-- [] home
+- [] home / ensure that the animation only occurs when slide button is pressed and when the page mounts
 - [] products
-- [] about us
+- [] about us / make container for dots larger to muitiagte absolute positioning hieght issues
 
 ## 13. remove the local cart or implement a local cart for users who are not logged in
 

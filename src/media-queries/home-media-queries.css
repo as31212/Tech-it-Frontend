@@ -1,0 +1,43 @@
+@media (max-width:1050px){
+    .header-text{
+        width: 100%;
+
+    }
+    .carousel-text{
+        max-width: none;
+    }
+
+}
+
+@media (max-width:650px){
+    .carousel-description{
+        font-size: medium;
+    }
+    .header-text{
+        font-size: xx-large;
+    }
+}
+
+@media (max-height:880px){
+    .carousel-description{
+        font-size: small;
+    }
+    .header-text{
+        font-size: xx-large;
+    }
+}
+
+@media (max-height:840px){
+    .home-carousel-image{
+        display: none;
+        opacity: none;
+    }
+    .carousel-text{
+        
+    }
+
+    .carousel-1{
+        display: block;
+    }
+
+}
