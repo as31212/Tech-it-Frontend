@@ -1,0 +1,9 @@
+@media (max-width:1050px){
+    #mobile-filter-toggle{
+        display: block;
+    }
+    .desktop-filter{
+        display: none;
+    }
+
+}

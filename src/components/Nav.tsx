@@ -137,7 +137,7 @@ const HamburgerNav: React.FC = () => {
 
       {/* Full Menu */}
       <motion.ul
-        className={`h-screen  ${
+        className={`h-screen text-3xl  ${
           menuOpen
             ? "absolute flex-col top-full left-0 w-full bg-white p-4 shadow-md"
             : " hidden"
