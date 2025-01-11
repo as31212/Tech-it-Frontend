@@ -7,6 +7,7 @@ const initialState: productFilterInterface = {
   sort: "",
   page: 1,
   isInitialized: false,
+  mobileToggle: false
 };
 
 const productFilterSlice = createSlice({
@@ -54,6 +55,9 @@ const productFilterSlice = createSlice({
       state.isInitialized = true;
     },
     resetFilters: () => initialState,
+    toggleMobile: (state) => {
+      state.mobileToggle = !state.mobileToggle;
+    },
   },
 });
 
@@ -67,6 +71,7 @@ export const {
   incrementPage,
   decrementPage,
   resetPage,
-  setPage
+  setPage,
+  toggleMobile
 } = productFilterSlice.actions;
 export default productFilterSlice.reducer;

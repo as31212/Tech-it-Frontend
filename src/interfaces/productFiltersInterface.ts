@@ -4,4 +4,5 @@ export interface productFilterInterface {
     sort: string
     page: number
     isInitialized: boolean
+    mobileToggle: boolean
 }

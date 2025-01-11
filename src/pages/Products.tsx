@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 import { useFetchProducts } from "../hooks/useFetchAllProducts";
-import ProductFilters from "../components/ProductFilters";
+import { ProductFilters,MobileProductFilters } from "../components/ProductFilters";
 import ProductCard from "../components/ProductCard";
 import { productDataInterface } from "../interfaces/productDataInterface";
 import Loading from "../components/Loading";

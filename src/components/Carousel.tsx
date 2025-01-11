@@ -23,7 +23,7 @@ const Carousel: React.FC = () => {
         loop={true}
         allowTouchMove={isMobile()}
         // autoplay={{delay: 10000 , disableOnInteraction:false}} 
-        className="w-[100vw] h-[90vh]"
+        className="h-[90vh]"
       >
         <SwiperSlide className="">
           <CarouselSlide1 title="We Make Technology Affordable" link="/Products" image="Image-1.png" buttonTitle="Products" description="Discover a wide range of affordable products that cater to all your needs and preferences. From stylish home decor to innovative tech gadgets, we offer high-quality items at prices that won’t break the bank. Whether you're looking to refresh your living space, upgrade your electronics, or find practical everyday essentials, our collection provides something for everyone. Browse through our carefully curated selections, each designed to bring both value and satisfaction. Take a look today, and enjoy premium products without the premium price tag!" />

@@ -128,7 +128,8 @@ const HamburgerNav: React.FC = () => {
 
       {/* Hamburger Icon for Mobile */}
       <div
-        className="md:hidden text-2xl cursor-pointer"
+      id="hamburger"
+        className="text-2xl cursor-pointer"
         onClick={() => setMenuOpen((prev) => !prev)}
       >
         {menuOpen ? <FaTimes /> : <FaBars />}
@@ -136,14 +137,14 @@ const HamburgerNav: React.FC = () => {
 
       {/* Full Menu */}
       <motion.ul
-        className={`flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-32 md:flex h-screen ${
+        className={`h-screen  ${
           menuOpen
-            ? "absolute top-full left-0 w-full bg-white p-4 shadow-md"
-            : "hidden md:flex"
+            ? "absolute flex-col top-full left-0 w-full bg-white p-4 shadow-md"
+            : " hidden"
         }`}
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: menuOpen ? 1 : 1, x: menuOpen ? 0 : 1000 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3 }}
       >
         <li>
           <Link className="" to="/About" onClick={() => setMenuOpen(false)}>
