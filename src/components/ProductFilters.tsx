@@ -5,6 +5,11 @@ import Sort from "./Sort";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 import { toggleMobile } from "../redux/slices/productFilters";
 import { motion } from "framer-motion";
+import { IoFilterSharp } from "react-icons/io5";
+import { useEffect } from "react";
+import { IoMdArrowRoundBack } from "react-icons/io";
+
+
 
 const ProductFilters: React.FC = () => {
   return (
@@ -51,8 +56,20 @@ const MobileProductFilters: React.FC = () => {
       },
     },
   };
+
+  useEffect(() => {
+      if (mobileFilterToggle) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+      return () => {
+        document.body.style.overflow = "auto";
+      };
+    }, [mobileFilterToggle]);
   return (
     <>
+    {/* grayed screen */}
       {mobileFilterToggle && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-20"
@@ -63,9 +80,9 @@ const MobileProductFilters: React.FC = () => {
         <button
         id="mobile-filter-toggle"
           onClick={() => dispatch(toggleMobile())}
-          className="border-2 hidden p-2 rounded-xl text-gray-500 hover:text-blue-500 hover:border-blue-400 duration-150 ease-in-out"
+          className="border-2 hidden p-5 rounded-xl text-gray-500 hover:text-blue-500 hover:border-blue-400 duration-150 scroll ease-in-out"
         >
-          Sort & Filters
+          <IoFilterSharp className="text-xl" />
         </button>
         <motion.div
           className={` p-6 bg-white rounded-lg shadow-lg absolute z-30 top-0 left-0 h-screen w-[450px] overflow-y-scroll ${
@@ -77,9 +94,14 @@ const MobileProductFilters: React.FC = () => {
           exit="hidden"
           variants={variants}
         >
-          <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">
-            Filters
-          </h2>
+          <div  className="flex">
+            <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">
+              Filters
+            </h2>
+          <IoMdArrowRoundBack onClick={()=>{
+            dispatch(toggleMobile());
+          }} className="text-blue-500 absolute left-96 text-3xl top-[18px]"/>
+          </div>
           <Sort />
           <CategoryFilter />
           <PriceFilter />

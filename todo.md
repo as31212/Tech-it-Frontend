@@ -57,7 +57,7 @@
 - [x] profile
 - [x] home 
   -[] / ensure that the animation only occurs when slide button is pressed and when the page mounts
-- [] products
+- [x] products
 - [] product detials
 - [] about us / make container for dots larger to muitiagte absolute positioning hieght issues
 - [x] fix bug that occurs between 849px width to 768px width
