@@ -92,4 +92,4 @@ const ProductCard: React.FC<productCardInterface> = ({
 export default ProductCard;
 
 
-//todo a lot must be done here, 1.resolve the issue with the small loading animation 2.ensure some way of the user being made aware that an item has been added to the cart potentially a side bar for user cart is displayed after item is added to cart. 3.fix way navigate works ensure that when you click on the name, img or white space in the div, that it navigates you to the product details page
+

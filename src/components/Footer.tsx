@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="bg-blue-500 text-white py-10 px-6 h-auto">
             {/* Top Section */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Stay Connected Section */}
                 <div className="space-y-4">
                     <h3 className="text-lg font-bold">Stay Connected</h3>

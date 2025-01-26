@@ -137,9 +137,9 @@ const HamburgerNav: React.FC = () => {
 
       {/* Full Menu */}
       <motion.ul
-        className={`h-screen text-3xl  ${
+        className={`h-screen text-2xl font-normal text-blue-500  ${
           menuOpen
-            ? "absolute flex-col top-full left-0 w-full bg-white p-4 shadow-md"
+            ? "absolute flex flex-col top-full left-0 w-full gap-2 bg-white p-4 shadow-md"
             : " hidden"
         }`}
         initial={{ opacity: 0, x: 100 }}
@@ -151,11 +151,13 @@ const HamburgerNav: React.FC = () => {
             ABOUT US
           </Link>
         </li>
+        <hr className="border-[1px]" />
         <li>
           <Link className="" to="/Products" onClick={() => setMenuOpen(false)}>
             PRODUCTS
           </Link>
         </li>
+        <hr className="border-[1px]" />
         {userData.auth ? (
           <>
             <li>
@@ -167,6 +169,7 @@ const HamburgerNav: React.FC = () => {
                 PROFILE
               </Link>
             </li>
+            <hr className="border-[1px]" />
             <li>
               <button
                 className="text-left px-5 py-2 duration-300 ease-in-out"
@@ -200,6 +203,7 @@ const HamburgerNav: React.FC = () => {
             CART
           </Link>
         </li>
+        <hr className="border-[1px]" />
       </motion.ul>
 
       {/* Cart Icon */}

@@ -94,13 +94,13 @@ const MobileProductFilters: React.FC = () => {
           exit="hidden"
           variants={variants}
         >
-          <div  className="flex">
+          <div  className="flex justify-between">
             <h2 className="text-xl font-bold text-gray-800 mb-4 text-center">
               Filters
             </h2>
           <IoMdArrowRoundBack onClick={()=>{
             dispatch(toggleMobile());
-          }} className="text-blue-500 absolute left-96 text-3xl top-[18px]"/>
+          }} className="text-blue-500 text-3xl top-[18px]"/>
           </div>
           <Sort />
           <CategoryFilter />
