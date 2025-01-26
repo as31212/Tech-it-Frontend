@@ -42,7 +42,7 @@ const useAddToCart = () => {
     }
   };
 
-  const addToLocalCart = (_id: string , quantity:number) => { //todo alter this function
+  const addToLocalCart = (_id: string ) => { //todo alter this function
     const existingLocalCart = localStorage.getItem("cart");
     if (existingLocalCart) {
       // Parse the existing cart array from local storage

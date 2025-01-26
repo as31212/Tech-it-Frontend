@@ -1,5 +1,5 @@
 import { PiShoppingCartThin } from "react-icons/pi";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useSelector } from "react-redux";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
@@ -21,7 +21,6 @@ const Nav: React.FC = () => {
 
 const NormalNav: React.FC = () => {
   const { logoutFunc } = useLogout();
-  const location = useLocation();
   const userData = useSelector((state: reduxStoreInterface) => state.userData);
   const [hovering, setHovering] = useState<boolean>(false);
 
@@ -108,7 +107,6 @@ const NormalNav: React.FC = () => {
 
 const HamburgerNav: React.FC = () => {
   const { logoutFunc } = useLogout();
-  const location = useLocation();
   const userData = useSelector((state: reduxStoreInterface) => state.userData);
   const [menuOpen, setMenuOpen] = useState<boolean>(false); // State for hamburger menu
 

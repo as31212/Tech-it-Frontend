@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLogout } from "./useLogout";
 import { setSessionStatus } from "../redux/slices/sessionSlice";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const useHandleSession = () => {
   const { logoutFunc } = useLogout();

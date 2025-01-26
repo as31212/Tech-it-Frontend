@@ -5,7 +5,7 @@ import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 const Settings: React.FC = () => {
   const userData = useSelector((state:reduxStoreInterface)=>state.userData);
   const token = useSelector((state:reduxStoreInterface)=>state.token);
-  const {error,loading,deleteUser} = useDeleteUser(); // todo handle loading state
+  const {error,deleteUser} = useDeleteUser(); // todo handle loading state
 
   return (
     <>

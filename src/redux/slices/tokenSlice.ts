@@ -4,7 +4,7 @@ const tokenSlice = createSlice({
     name:"token",
     initialState:null,
     reducers:{
-        loginToken:(state,action)=>{
+        loginToken:(_state,action)=>{
             return action.payload;
         },
         logoutToken:()=>{

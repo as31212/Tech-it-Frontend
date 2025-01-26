@@ -1,6 +1,6 @@
 import { productCardInterface } from "../interfaces/productCardInterace";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAddToCart from "../hooks/useAddToCart";
 import { reduxStoreInterface } from "../interfaces/reduxStoreInterface";
 import { updateModalItem,toggleModal } from "../redux/slices/modalData";
@@ -72,7 +72,7 @@ const ProductCard: React.FC<productCardInterface> = ({
                 dispatch(toggleModal());
               
             } else {
-              addToLocalCart(_id, 1);
+              addToLocalCart(_id);
             }
           }}
           className={`p-2 border-2 border-blue-500 rounded-md w-full font-bold my-2 mx-auto hover:text-white hover:bg-blue-500 ease-in-out duration-300 ${

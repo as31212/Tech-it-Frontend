@@ -7,7 +7,7 @@ const cartDataSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    populateCart: (state, action) => {
+    populateCart: (_state, action) => { 
       return action.payload;
     },
     addItem:(state,action)=>{

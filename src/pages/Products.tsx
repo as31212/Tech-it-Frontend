@@ -8,7 +8,7 @@ import Loading from "../components/Loading";
 import { useSyncQueryParams } from "../hooks/useSyncQueryParams";
 import { useInitializeFilter } from "../hooks/useInitializeFilter";
 import Pagination from "../components/Pagination";
-import { FourOFour,NoItemFound } from "../components/Error";
+import { NoItemFound } from "../components/Error";
 
 export const Products: React.FC = () => {
   const productData: productDataInterface = useSelector(

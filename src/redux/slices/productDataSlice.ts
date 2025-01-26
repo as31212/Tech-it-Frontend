@@ -13,7 +13,7 @@ const productDataSlice = createSlice({
   name: "productData",
   initialState,
   reducers: {
-    populate: (state, action: PayloadAction<productDataInterface>) => {
+    populate: (_state, action: PayloadAction<productDataInterface>) => {
       return action.payload; // Replace the current state entirely with the payload
     },
   },

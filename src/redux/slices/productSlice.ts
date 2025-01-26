@@ -11,7 +11,7 @@ const productSlice = createSlice({
         images: [],
     },
     reducers: {
-        populate: (state, action) => {
+        populate: (_state, action) => {
             return { ...action.payload };
         },
         reset: () => {

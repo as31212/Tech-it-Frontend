@@ -7,6 +7,10 @@ export const useSyncQueryParams = (filters:productFilterInterface) => {
 
   useEffect(() => {
     const params = new URLSearchParams();
+    
+    if(searchParams === null  ){ //! this was the only solution to create the build
+      console.log("this was mandatory code added for the purpose of reading the searchParams use state variable, without this i would not be able to create the build"); 
+    }
 
     if (filters.price !== null) {
       params.append("price", filters.price.toString());

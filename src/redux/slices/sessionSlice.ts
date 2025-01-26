@@ -9,7 +9,7 @@ const sessionSlice = createSlice({
     name:"sessionData",
     initialState,
     reducers:{
-        setSessionStatus:(state,action)=>{
+        setSessionStatus:(_state,action)=>{
             return action.payload;
         }
     }

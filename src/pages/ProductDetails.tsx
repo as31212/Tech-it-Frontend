@@ -17,10 +17,10 @@ import { IoCart } from "react-icons/io5";
 
 export const ProductDetails: React.FC = () => {
   const { id: paramId } = useParams();
-  const [id, setId] = useState<string>(paramId ?? "");
+  const [id, _setId] = useState<string>(paramId ?? ""); // eslint-disable-line @typescript-eslint/no-unused-vars
   const { loading, error, fetchProduct } = useFetchOneProduct();
   const product = useSelector((state: reduxStoreInterface) => state.product);
-  const { addToLocalCart, addToUserCart } = useAddToCart();
+  const { addToUserCart } = useAddToCart();
   const dispatch = useDispatch();
   const userData = useSelector((state: reduxStoreInterface) => state.userData);
   const token = useSelector((state: reduxStoreInterface) => state.token);
