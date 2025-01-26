@@ -15,8 +15,9 @@ const ProductImgCarousel: React.FC<ProductImgCarousel> = ({ images }) => {
   return (
     <div className="max-w-[1100px] mx-auto flex gap-6">
       {/* Thumbnail Navigation (Left) */}
-      <div className="w-1/5 max-h-[55vh]">
+      <div  className="w-1/5 max-h-[55vh] mx-auto ">
         <Swiper
+          
           modules={[Thumbs]}
           onSwiper={setThumbsSwiper}
           direction="vertical"
@@ -30,7 +31,7 @@ const ProductImgCarousel: React.FC<ProductImgCarousel> = ({ images }) => {
               <img
                 src={img}
                 alt={`Thumbnail ${index + 1}`}
-                className="w-full h-20 object-cover rounded-3xl hover:brightness-75 transition duration-150 ease-in-out"
+                className="w-[90%] rounded-3xl hover:brightness-75 transition duration-150 ease-in-out"
               />
             </SwiperSlide>
           ))}
@@ -38,7 +39,7 @@ const ProductImgCarousel: React.FC<ProductImgCarousel> = ({ images }) => {
       </div>
 
       {/* Main Image Carousel */}
-      <div className="max-w-[45vw]">
+      <div id="main-img-product-details" className="max-w-[45vw]">
         <Swiper
           modules={[ Thumbs]}
           spaceBetween={10}
@@ -50,7 +51,7 @@ const ProductImgCarousel: React.FC<ProductImgCarousel> = ({ images }) => {
               <img
                 src={img}
                 alt={`Product image ${index + 1}`}
-                className="w-full h-[30rem] object-cover rounded-lg shadow-lg"
+                className="max-w-[36rem] w-[90%] rounded-lg shadow-lg"
               />
             </SwiperSlide>
           ))}

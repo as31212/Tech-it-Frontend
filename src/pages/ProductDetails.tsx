@@ -49,7 +49,7 @@ export const ProductDetails: React.FC = () => {
             ]}
           />
           {/* Product Details */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 mx-auto">
             <h2 className="text-3xl font-bold mb-4">{product.name ? upperCaseFirstCharAll(product.name) : ""}</h2> 
             <p className="text-gray-700">Model: 64795 SKU: 6396205</p>
             <div className="flex gap-2" id="stars">
@@ -58,7 +58,7 @@ export const ProductDetails: React.FC = () => {
             </div>
             <div id="product-detail-price" className="flex gap-3">
               <p className="text-2xl font-bold text-gray-800 mb-4">
-                ${product.price}
+                ${product.price.toFixed(2)}
               </p>
             {/* Or Section */}
               <div>

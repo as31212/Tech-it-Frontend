@@ -1,0 +1,6 @@
+@media(max-width:860px){
+   #about-metrics{
+    flex-wrap: nowrap;
+    flex-direction: column;
+   }
+}

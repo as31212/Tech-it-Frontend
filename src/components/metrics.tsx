@@ -31,6 +31,7 @@ const Metrics: React.FC = () => {
 
   return (
     <motion.div
+    id="about-metrics"
       ref={ref}
       className="flex flex-wrap items-center justify-around p-5 min-h-[50vh]"
     >

@@ -1,0 +1,11 @@
+@media (max-width:800px){
+    #main-img-product-details{
+        margin-top: 15rem;
+    }
+    #thumbnail-nav{
+        flex-direction: column;
+
+    }
+}
+
+

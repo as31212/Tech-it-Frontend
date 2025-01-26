@@ -85,10 +85,10 @@ const MobileProductFilters: React.FC = () => {
           <IoFilterSharp className="text-xl" />
         </button>
         <motion.div
-          className={` p-6 bg-white rounded-lg shadow-lg absolute z-30 top-0 left-0 h-screen w-[450px] overflow-y-scroll ${
+          className={` p-6 bg-white rounded-lg shadow-lg absolute z-30 top-0 left-0 h-screen w-[375px] overflow-y-scroll ${
             mobileFilterToggle ? "flex flex-col gap-5" : "hidden"
           }`}
-          id="product-filters"
+          id="product-filters-mobile"
           initial="hidden"
           animate={mobileFilterToggle ? "visible" : "hidden"}
           exit="hidden"

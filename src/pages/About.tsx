@@ -104,7 +104,7 @@ export const About: React.FC = () => {
         {/* Delivery Section */}
         <div
           id="delivery"
-          className="bg-gradient-to-r from-blue-500 to-purple-600 text-white pb-20 pt-40 mt-16 h-screen"
+          className="bg-gradient-to-r from-blue-500 to-purple-600 text-white pb-20 pt-40 mt-16 min-h-fit "
         >
           <div className="max-w-5xl mx-auto text-center">
             <motion.h2
