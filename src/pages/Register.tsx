@@ -24,7 +24,7 @@ export const Register: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await registerUser(formData, "http://localhost:4005/auth/register");
+    await registerUser(formData, "https://tech-it-backend.onrender.com/auth/register");
   };
 
   return (

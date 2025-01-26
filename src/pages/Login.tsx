@@ -23,7 +23,7 @@ export const Login: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await loginUser("http://localhost:4005/auth/login", formData);
+    await loginUser("https://tech-it-backend.onrender.com/auth/login", formData);
   };
 
   return (

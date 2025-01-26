@@ -8,7 +8,7 @@ const useDeleteUser = () => {
   const deleteUser = async (id: string, token: string) => {
     setLoading(true);
     try {
-      const request = await fetch(`http://localhost:4005/auth/delete/${id}`, {
+      const request = await fetch(`https://tech-it-backend.onrender.com/auth/delete/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "json/application",

@@ -14,7 +14,7 @@ const useFetchUserCart = () => {
   const fetchUserCart = async () => {
     try {
       setLoading(true);
-      const request = await fetch(`http://localhost:4005/cart/all/${userData.id}`,
+      const request = await fetch(`https://tech-it-backend.onrender.com/cart/all/${userData.id}`,
         {
           method:"GET",
           headers:{

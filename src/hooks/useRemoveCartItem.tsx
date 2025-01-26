@@ -11,7 +11,7 @@ const useRemoveCartItem= ()=>{
 
     const removeItem = async (productId:string)=>{
         try {
-            const request =  await fetch(`http://localhost:4005/cart/delete/${userData.id}`,{ //todo add url
+            const request =  await fetch(`https://tech-it-backend.onrender.com/cart/delete/${userData.id}`,{ //todo add url
                 method:"DELETE",
                 headers:{
                     "Content-Type":"application/json",

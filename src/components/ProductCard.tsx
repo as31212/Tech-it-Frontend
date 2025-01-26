@@ -63,7 +63,7 @@ const ProductCard: React.FC<productCardInterface> = ({
             if (userData.auth) {
               
                 addToUserCart(
-                  `http://localhost:4005/cart/add/${userData.id}`,
+                  `https://tech-it-backend.onrender.com/cart/add/${userData.id}`,
                   token,
                   _id,
                   1

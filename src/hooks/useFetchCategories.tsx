@@ -9,7 +9,7 @@ const useFetchCategories = () => {
   const fetchCategories = async () => {
     try {
       setLoading(true);
-      const request = await fetch("http://localhost:4005/categories/all");
+      const request = await fetch("https://tech-it-backend.onrender.com/categories/all");
       const result = await request.json();
 
       if (request.ok) {

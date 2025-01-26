@@ -38,7 +38,7 @@ export const useFetchProducts = () => {
 
       // Generate the query string based on filters
       const queryString = createQueryString(filters);
-      const url = `http://localhost:4005/products/all${
+      const url = `https://tech-it-backend.onrender.com/products/all${
         queryString ? `?${queryString}` : ""
       }`;
 

@@ -25,7 +25,7 @@ const CartCard: React.FC<cartCardInterface> = ({
   const handleQuantityChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setLocalQuantity(Number(e.target.value));
     changeQuantity(
-      `http://localhost:4005/cart/quantity/${userData.id}`,
+      `https://tech-it-backend.onrender.com/cart/quantity/${userData.id}`,
       productId,
       Number(e.target.value)
     );

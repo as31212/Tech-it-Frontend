@@ -22,7 +22,7 @@ const ProductModal: React.FC = () => {
 
   useEffect(() => {
     if (modalData.modalItem) {
-      fetchProduct(`http://localhost:4005/products/get/${modalData.modalItem}`);
+      fetchProduct(`https://tech-it-backend.onrender.com/products/get/${modalData.modalItem}`);
     }
   }, [modalData.modalItem]);
 

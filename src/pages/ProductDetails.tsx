@@ -28,7 +28,7 @@ export const ProductDetails: React.FC = () => {
   const {upperCaseFirstCharAll} = useStringMutation();
 
   useEffect(() => {
-    fetchProduct(`http://localhost:4005/products/get/${id}`);
+    fetchProduct(`https://tech-it-backend.onrender.com/products/get/${id}`);
   }, [id]);
 
   if (loading) return <Loading />;
@@ -90,7 +90,7 @@ export const ProductDetails: React.FC = () => {
             <button
               onClick={() => {
                 addToUserCart(
-                  `http://localhost:4005/cart/add/${userData.id}`,
+                  `https://tech-it-backend.onrender.com/cart/add/${userData.id}`,
                   token,
                   id,
                   1
